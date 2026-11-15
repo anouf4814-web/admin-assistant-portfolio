@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف إنجاز المساعد الإداري - العام الدراسي 1448هـ</title>
+    
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#173B56',       // الكحلي المزرق الداكن
+                            ocean: '#17658F',      // الأزرق البحري
+                            medium: '#237FA8',     // الأزرق المتوسط
+                            turquoise: '#279AB7',  // التركواز السماوي
+                            ice: '#D9EFF7',        // الأزرق الثلجي الفاتح
+                            bg: '#F2F6F9',         // الرمادي المزرق الفاتح
+                            muted: '#8293A2',      // الرمادي الهادئ
+                            mint: '#E7F5EF',       // الأخضر النعناعي الفاتح
+                            gold: '#F7C85C',       // الذهبي الهادئ
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(23, 59, 86, 0.06)',
+                        'card': '0 2px 12px 0 rgba(23, 59, 86, 0.04)',
+                        'hover': '0 10px 25px -5px rgba(23, 101, 143, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            background-color: #F2F6F9;
+            color: #173B56;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2F6F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B8C9D6;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #237FA8;
+        }
+
+        /* Gradients */
+        .btn-gradient {
+            background: linear-gradient(135deg, #17658F 0%, #279AB7 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #135376 0%, #21859E 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(23, 101, 143, 0.25);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #173B56 0%, #17658F 55%, #279AB7 100%);
+        }
+
+        .soft-blue-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F4FAFD 100%);
+        }
+
+        /* Rich Text Editor Area */
+        .editor-content {
+            min-height: 220px;
+            outline: none;
+            line-height: 1.9;
+        }
+        .editor-content:focus {
+            border-color: #237FA8;
+            box-shadow: 0 0 0 3px rgba(35, 127, 168, 0.12);
+        }
+        .editor-content ul {
+            list-style-type: disc;
+            padding-right: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .editor-content ol {
+            list-style-type: decimal;
+            padding-right: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .editor-content h2, .editor-content h3 {
+            font-weight: 700;
+            color: #173B56;
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Drag & Drop Zone */
+        .drop-zone.dragover {
+            background-color: #D9EFF7;
+            border-color: #17658F;
+            transform: scale(1.01);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: #FFFFFF !important;
+                color: #173B56 !important;
+            }
+            #sidebar, #topNavbar, .no-print, button {
+                display: none !important;
+            }
+            #mainContent {
+                margin-right: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            #printReportContainer {
+                display: block !important;
+            }
+            #appViewContainer {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-ice selection:text-brand-navy">
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
+
+    <!-- Custom Confirmation Modal (No browser confirm/alert) -->
+    <div id="confirmModal" class="fixed inset-0 bg-brand-navy/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-brand-ice transform transition-all">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div>
+                    <h3 id="confirmTitle" class="text-lg font-bold text-brand-navy">تأكيد الإجراء</h3>
+                    <p id="confirmMessage" class="text-sm text-brand-muted">هل أنت متأكد من تنفيذ هذا الإجراء؟</p>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3 mt-6">
+                <button id="confirmCancelBtn" class="px-4 py-2 rounded-xl border border-gray-200 text-brand-navy hover:bg-gray-50 font-medium text-sm transition">إلغاء</button>
+                <button id="confirmOkBtn" class="px-5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-medium text-sm transition shadow-sm">تأكيد الحذف</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Owner Login / Setup Modal -->
+    <div id="authModal" class="fixed inset-0 bg-brand-navy/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-7 shadow-2xl border border-brand-ice relative">
+            <button onclick="closeAuthModal()" class="absolute top-5 left-5 w-9 h-9 rounded-full bg-brand-bg text-brand-muted hover:text-brand-navy flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 rounded-2xl bg-brand-ice text-brand-ocean flex items-center justify-center text-2xl mx-auto mb-3 shadow-sm">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h2 class="text-xl font-bold text-brand-navy">بوابة إدارة الملف</h2>
+                <p id="authSubtitle" class="text-sm text-brand-muted mt-1">خاصة بصاحبة الملف للتعديل وإضافة الشواهد</p>
+            </div>
+
+            <form id="authForm" onsubmit="handleOwnerAuth(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-brand-navy mb-1.5">البريد الإلكتروني لصاحبة الملف</label>
+                    <div class="relative">
+                        <input type="email" id="authEmail" required placeholder="admin@school.edu.sa" class="w-full pl-4 pr-10 py-2.5 rounded-xl border border-gray-200 focus:border-brand-medium focus:ring-2 focus:ring-brand-ice outline-none text-sm dir-ltr text-right">
+                        <i class="fa-regular fa-envelope absolute right-3.5 top-3 text-brand-muted"></i>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-brand-navy mb-1.5">كلمة المرور</label>
+                    <div class="relative">
+                        <input type="password" id="authPassword" required minlength="6" placeholder="••••••••" class="w-full pl-4 pr-10 py-2.5 rounded-xl border border-gray-200 focus:border-brand-medium focus:ring-2 focus:ring-brand-ice outline-none text-sm">
+                        <i class="fa-solid fa-lock absolute right-3.5 top-3 text-brand-muted"></i>
+                    </div>
+                </div>
+
+                <div id="authNotice" class="p-3 rounded-xl bg-brand-bg text-xs text-brand-navy leading-relaxed border border-brand-ice">
+                    <i class="fa-solid fa-circle-info text-brand-turquoise ml-1"></i>
+                    <span>إذا كانت هذه المرة الأولى، سيتم تسجيلك تلقائياً كـ <strong>المالكة الوحيدة</strong> للملف وتأمين الصلاحيات لكِ فقط.</span>
+                </div>
+
+                <button type="submit" id="authSubmitBtn" class="w-full py-3 rounded-xl btn-gradient text-white font-bold text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>دخول لوحة الإدارة</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Evidence Preview Modal (Images, PDF, Video, Docs) -->
+    <div id="previewModal" class="fixed inset-0 bg-brand-navy/80 backdrop-blur-sm z-50 hidden items-center justify-center p-3 sm:p-6">
+        <div class="bg-white rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden border border-brand-ice">
+            <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-brand-bg/50">
+                <div class="flex items-center gap-3 overflow-hidden">
+                    <div id="previewIcon" class="w-10 h-10 rounded-xl bg-brand-ice text-brand-ocean flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+                    <div class="truncate">
+                        <h3 id="previewTitle" class="font-bold text-brand-navy text-base truncate">معاينة الشاهد</h3>
+                        <p id="previewMeta" class="text-xs text-brand-muted">تاريخ الإضافة</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <a id="previewDownloadBtn" href="#" target="_blank" download class="px-4 py-2 rounded-xl btn-gradient text-white text-xs sm:text-sm font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span class="hidden sm:inline">تنزيل الملف</span>
+                    </a>
+                    <button onclick="closePreviewModal()" class="w-9 h-9 rounded-xl bg-white border border-gray-200 text-brand-navy hover:bg-red-50 hover:text-red-600 flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="previewBody" class="p-4 sm:p-6 overflow-auto flex-1 flex items-center justify-center bg-gray-50/70 min-h-[300px]">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden File Input for Replacing an Evidence File -->
+    <input type="file" id="replaceFileInput" class="hidden" onchange="handleReplaceFileSelected(event)">
+
+    <!-- App Layout Wrapper -->
+    <div class="min-h-screen flex flex-col lg:flex-row">
+
+        <!-- Mobile Backdrop -->
+        <div id="sidebarBackdrop" onclick="toggleSidebar()" class="fixed inset-0 bg-brand-navy/40 backdrop-blur-xs z-30 hidden lg:hidden"></div>
+
+        <!-- Collapsible Sidebar (Index & Navigation) -->
+        <aside id="sidebar" class="fixed lg:sticky top-0 right-0 h-screen w-72 bg-white border-l border-gray-200/80 z-40 transform translate-x-full lg:translate-x-0 transition-transform duration-300 flex flex-col shadow-soft">
+            <!-- Sidebar Header -->
+            <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('dashboard')">
+                    <div class="w-10 h-10 rounded-xl hero-gradient text-white flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-folder-open text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold text-brand-navy text-sm leading-tight">ملف إنجاز المساعد الإداري</h1>
+                        <span class="text-xs font-semibold text-brand-turquoise">العام الدراسي 1448هـ</span>
+                    </div>
+                </div>
+                <button onclick="toggleSidebar()" class="lg:hidden w-8 h-8 rounded-lg bg-brand-bg text-brand-navy flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Mode Status Badge -->
+            <div class="px-4 py-2.5 bg-brand-bg/70 border-b border-gray-100 flex items-center justify-between">
+                <div id="roleStatusBadge" class="flex items-center gap-2 text-xs font-bold text-brand-ocean">
+                    <span class="w-2 h-2 rounded-full bg-brand-turquoise animate-pulse"></span>
+                    <span>وضع المشاهدة للزوار</span>
+                </div>
+                <button id="sidebarAuthBtn" onclick="openAuthModal()" class="text-xs font-bold text-brand-medium hover:text-brand-navy underline">
+                    دخول الإدارة
+                </button>
+            </div>
+
+            <!-- Navigation Links (Exact Required Order) -->
+            <nav id="sidebarNav" class="flex-1 overflow-y-auto p-3 space-y-1">
+                <!-- Populated dynamically via JS to ensure exact order -->
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="p-4 border-t border-gray-100 bg-brand-bg/40">
+                <button onclick="prepareAndPrint()" class="w-full py-2.5 px-4 rounded-xl bg-white border border-brand-ice text-brand-navy hover:bg-brand-ice/50 font-bold text-xs flex items-center justify-center gap-2 transition shadow-xs">
+                    <i class="fa-solid fa-print text-brand-ocean"></i>
+                    <span>طباعة / تصدير تقرير PDF</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div id="mainContent" class="flex-1 flex flex-col min-w-0">
+            
+            <!-- Top Navigation Bar -->
+            <header id="topNavbar" class="sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-gray-200/70 px-4 sm:px-8 py-3.5">
+                <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <button onclick="toggleSidebar()" class="lg:hidden w-10 h-10 rounded-xl bg-brand-bg text-brand-navy hover:bg-brand-ice flex items-center justify-center transition">
+                            <i class="fa-solid fa-bars text-lg"></i>
+                        </button>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span id="breadcrumbSection" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand-ice text-brand-ocean">لوحة التحكم الرئيسية</span>
+                                <span id="syncIndicator" class="text-xs text-brand-muted hidden sm:inline-flex items-center gap-1">
+                                    <i class="fa-solid fa-cloud-check text-emerald-500"></i> متصل سحابياً
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global Quick Search & Actions -->
+                    <div class="flex items-center gap-2.5 flex-1 sm:flex-initial justify-end">
+                        <div class="relative w-full sm:w-64 md:w-72">
+                            <input type="text" id="globalSearchInput" onkeyup="handleGlobalSearch(event)" placeholder="بحث سريع في الشواهد والأقسام..." class="w-full pr-9 pl-3 py-2 rounded-xl bg-brand-bg border border-transparent focus:bg-white focus:border-brand-medium outline-none text-xs sm:text-sm text-brand-navy transition">
+                            <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-brand-muted text-xs"></i>
+                        </div>
+                        
+                        <button onclick="navigateTo('search')" title="البحث المتقدم والتصفية" class="w-9 h-9 rounded-xl bg-brand-ice/70 text-brand-ocean hover:bg-brand-ice flex items-center justify-center shrink-0 transition">
+                            <i class="fa-solid fa-sliders"></i>
+                        </button>
+
+                        <button id="topOwnerActionBtn" onclick="openAuthModal()" class="px-3.5 py-2 rounded-xl btn-gradient text-white text-xs font-bold flex items-center gap-1.5 shrink-0 shadow-xs">
+                            <i class="fa-solid fa-lock"></i>
+                            <span class="hidden sm:inline">إدارة الملف</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic View Container -->
+            <main id="appViewContainer" class="flex-1 p-4 sm:p-8 max-w-7xl w-full mx-auto">
+                <!-- Loading State -->
+                <div class="flex flex-col items-center justify-center py-20 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-ice text-brand-ocean flex items-center justify-center text-2xl mb-4 animate-bounce">
+                        <i class="fa-solid fa-folder-tree"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-brand-navy">جاري تحميل ملف الأداء الوظيفي...</h2>
+                    <p class="text-sm text-brand-muted mt-1">يتم مزامنة البيانات والشواهد من التخزين السحابي</p>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="no-print mt-auto py-5 px-6 border-t border-gray-200/60 bg-white/60 text-center text-xs text-brand-muted">
+                <p>ملف إنجاز والأداء الوظيفي الإلكتروني للمساعد الإداري — العام الدراسي <span class="font-bold text-brand-ocean">1448هـ</span></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Dedicated Print Report Container (Visible only when printing) -->
+    <div id="printReportContainer" class="hidden p-8 bg-white text-brand-navy"></div>
+
+    <!-- Firebase SDKs & Complete Application Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            signInAnonymously, 
+            signInWithCustomToken, 
+            signInWithEmailAndPassword, 
+            createUserWithEmailAndPassword, 
+            signOut, 
+            onAuthStateChanged 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            doc, 
+            getDoc, 
+            setDoc, 
+            updateDoc, 
+            deleteDoc, 
+            addDoc, 
+            collection, 
+            onSnapshot 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { 
+            getStorage, 
+            ref, 
+            uploadBytesResumable, 
+            getDownloadURL, 
+            deleteObject 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
+
+        // =========================================================================
+        // 1. FIREBASE INITIALIZATION & CONFIGURATION
+        // =========================================================================
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'admin-assistant-portfolio-1448';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        let app, auth, db, storage;
+        if (firebaseConfig) {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            storage = getStorage(app);
+        }
+
+        // Strict Firestore Paths (Public Read, Owner Write)
+        const getPortfolioDocRef = () => doc(db, 'artifacts', appId, 'public', 'data', 'portfolio_settings', 'main');
+        const getOwnerConfigRef = () => doc(db, 'artifacts', appId, 'public', 'data', 'portfolio_settings', 'owner_lock');
+        const getEvidencesColRef = () => collection(db, 'artifacts', appId, 'public', 'data', 'evidences');
+
+        // =========================================================================
+        // 2. APPLICATION STATE & EXACT SECTION DEFINITIONS
+        // =========================================================================
+        const DEFAULT_MOE_LOGO = "https://upload.wikimedia.org/wikipedia/ar/thumb/3/3e/Ministry_of_Education_%28Saudi_Arabia%29_Logo.svg/512px-Ministry_of_Education_%28Saudi_Arabia%29_Logo.svg.png";
+        const DEFAULT_SCHOOL_LOGO = "https://placehold.co/200x200/D9EFF7/173B56?text=شعار+المدرسة";
+
+        // Exact Ordered Index Required by User
+        const SECTIONS_INDEX = [
+            { id: 'dashboard', num: '', title: 'لوحة التحكم الرئيسية', icon: 'fa-chart-pie', type: 'dashboard', color: 'bg-brand-ice text-brand-ocean' },
+            { id: 'cover', num: 'الغلاف', title: 'غلاف الملف التعريفي', icon: 'fa-id-card-clip', type: 'cover', color: 'bg-sky-50 text-brand-medium' },
+            { id: 'intro', num: '1', title: 'المقدمة', icon: 'fa-book-open', type: 'editor', field: 'introText', color: 'bg-brand-mint text-emerald-700' },
+            { id: 'vision', num: '2', title: 'الرؤية والرسالة والقيم', icon: 'fa-compass', type: 'vision_mission', color: 'bg-amber-50 text-amber-600' },
+            { id: 'edu_goals', num: '3', title: 'أهداف التعليم في المملكة العربية السعودية', icon: 'fa-landmark', type: 'editor', field: 'eduGoalsText', color: 'bg-brand-ice text-brand-ocean' },
+            { id: 'ethics', num: '4', title: 'ميثاق أخلاقيات مهنة التعليم', icon: 'fa-scale-balanced', type: 'editor', field: 'ethicsText', color: 'bg-indigo-50 text-indigo-600' },
+            { id: 'cv', num: '5', title: 'السيرة الذاتية', icon: 'fa-user-tie', type: 'cv', color: 'bg-teal-50 text-teal-700' },
+            { id: 'goal_1', num: '6', title: 'الهدف الأول', icon: 'fa-bullseye', type: 'goal', goalIndex: 0, color: 'bg-sky-50 text-brand-ocean' },
+            { id: 'goal_2', num: '7', title: 'الهدف الثاني', icon: 'fa-bullseye', type: 'goal', goalIndex: 1, color: 'bg-sky-50 text-brand-ocean' },
+            { id: 'goal_3', num: '8', title: 'الهدف الثالث', icon: 'fa-bullseye', type: 'goal', goalIndex: 2, color: 'bg-sky-50 text-brand-ocean' },
+            { id: 'goal_4', num: '9', title: 'الهدف الرابع', icon: 'fa-bullseye', type: 'goal', goalIndex: 3, color: 'bg-sky-50 text-brand-ocean' },
+            { id: 'goal_5', num: '10', title: 'الهدف الخامس', icon: 'fa-bullseye', type: 'goal', goalIndex: 4, color: 'bg-sky-50 text-brand-ocean' },
+            { id: 'evidences_lib', num: '11', title: 'الشواهد والملحقات', icon: 'fa-folder-plus', type: 'evidence', category: 'evidences_lib', desc: 'مكتبة إلكترونية لرفع جميع الشواهد والملحقات وشواهد أعمال المساعد الإداري مباشرة', color: 'bg-brand-ice text-brand-ocean' },
+            { id: 'records', num: '12', title: 'السجلات والملفات المعتمدة', icon: 'fa-file-signature', type: 'evidence', category: 'records', desc: 'رفع السجلات الإدارية والملفات المعتمدة والصور مباشرة', color: 'bg-brand-mint text-emerald-700' },
+            { id: 'competencies', num: '13', title: 'الجدارات الوظيفية', icon: 'fa-award', type: 'evidence', category: 'competencies', desc: 'رفع شواهد الجدارات الوظيفية والملفات والصور المرتبطة بها', color: 'bg-amber-50 text-amber-600' },
+            { id: 'initiatives', num: '14', title: 'المبادرات', icon: 'fa-lightbulb', type: 'evidence', category: 'initiatives', desc: 'رفع ملفات المبادرات وصورها وتقاريرها مباشرة', color: 'bg-purple-50 text-purple-600' },
+            { id: 'courses', num: '15', title: 'الدورات التدريبية', icon: 'fa-graduation-cap', type: 'evidence', category: 'courses', desc: 'رفع شهادات الدورات التدريبية وملفاتها وصورها مباشرة', color: 'bg-sky-50 text-brand-medium' },
+            { id: 'volunteering', num: '16', title: 'الأعمال التطوعية', icon: 'fa-hand-holding-heart', type: 'evidence', category: 'volunteering', desc: 'رفع جميع شواهد الأعمال التطوعية والمشاركات والصور', color: 'bg-rose-50 text-rose-600' },
+            { id: 'certificates', num: '17', title: 'شهادات الشكر والتقدير', icon: 'fa-certificate', type: 'evidence', category: 'certificates', desc: 'معرض أنيق لرفع وعرض وتنزيل شهادات الشكر والتقدير', color: 'bg-amber-50 text-amber-600' },
+            { id: 'conclusion', num: '18', title: 'الخاتمة', icon: 'fa-feather-pointed', type: 'editor', field: 'conclusionText', color: 'bg-brand-ice text-brand-navy' }
+        ];
+
+        const DEFAULT_PORTFOLIO_DATA = {
+            schoolName: "المدرسة الثانوية النموذجية",
+            assistantName: "أ. نورة بنت عبدالله",
+            principalName: "أ. سارة بنت محمد",
+            academicYear: "1448هـ",
+            moeLogoUrl: DEFAULT_MOE_LOGO,
+            schoolLogoUrl: DEFAULT_SCHOOL_LOGO,
+            introText: "<p>الحمد لله رب العالمين، والصلاة والسلام على أشرف الأنبياء والمرسلين نبينا محمد وعلى آله وصحبه أجمعين.. أما بعد:</p><p>يُعد ملف الإنجاز والأداء الوظيفي للمساعد الإداري توثيقاً مهنياً منظماً لكافة الجهود والمهام الإدارية والتنظيمية المنفذة خلال العام الدراسي <strong>1448هـ</strong>، ومرآة تعكس مستوى التطور المهني وجودة الأداء المؤسسي في البيئة المدرسية.</p>",
+            visionText: "<p>الريادة والتميز في تقديم الخدمات الإدارية والمساندة المدرسية بكفاءة عالية وجودة مستدامة تواكب تطلعات وزارة التعليم ورؤية المملكة 2030.</p>",
+            missionText: "<p>تنظيم العمل الإداري وتوثيق البيانات والسجلات المدرسية بدقة واحترافية، وتهيئة بيئة إدارية داعمة لمنسوبات المدرسة والطالبات وأولياء الأمور.</p>",
+            valuesText: "<ul><li><strong>الإتقان والجودة:</strong> الالتزام بأعلى معايير الدقة في إنجاز المعاملات.</li><li><strong>الأمانة والسرية:</strong> الحفاظ على خصوصية البيانات والسجلات المدرسية.</li><li><strong>العمل بروح الفريق:</strong> التعاون الفعّال مع الإدارة المدرسية والهيئة التعليمية.</li><li><strong>المبادرة والتطوير:</strong> السعي المستمر لتبسيط الإجراءات وتوظيف التقنية.</li></ul>",
+            eduGoalsText: "<ul><li>تنمية روح الولاء لشريعة الإسلام، والاعتزاز بالوطن وقيادته الرشيدة.</li><li>تزويد الطالبات بالقدر المناسب من المعلومات الثقافية والخبرات المختلفة التي تجعل منهن عضوات عاملات في المجتمع.</li><li>تنمية مهارات التفكير والبحث العلمي، ومواكبة التطور التقني والمعرفي.</li><li>تعزيز القيم الأخلاقية والانتماء الوطني والعمل التطوعي وخدمة المجتمع.</li><li>رفع كفاءة الأداء المؤسسي والبيئة التعليمية بما يحقق مستهدفات رؤية المملكة 2030.</li></ul>",
+            ethicsText: "<ul><li>استشعار عظمة الرسالة التربوية والإدارية وأثرها في بناء الأجيال.</li><li>الالتزام بالنزاهة والشفافية والعدل في التعامل مع جميع منسوبات المدرسة والمراجعين.</li><li>المحافظة على أوقات الدوام الرسمي واستثمارها في إنجاز المهام بكفاءة.</li><li>الالتزام بالأنظمة واللوائح والتعليمات الصادرة من وزارة التعليم.</li><li>التعاون الإيجابي وبناء علاقات مهنية قائمة على الاحترام المتبادل.</li></ul>",
+            cv: {
+                fullName: "أ. نورة بنت عبدالله",
+                qualification: "بكالوريوس إدارة أعمال",
+                experienceYears: "8 سنوات",
+                startDate: "1440/01/01هـ",
+                jobTitle: "مساعد إداري",
+                photoUrl: ""
+            },
+            goals: [
+                { title: "تنظيم وأرشفة السجلات والملفات الإدارية إلكترونياً وورقياً بدقة 100%", status: "completed" },
+                { title: "تجويد إجراءات متابعة حضور وانصراف منسوبات المدرسة والطالبات عبر نظام نور", status: "in_progress" },
+                { title: "أتمتة النماذج والتقارير الإدارية الدورية لتسريع إنجاز المعاملات", status: "in_progress" },
+                { title: "تعزيز التواصل الفعّال مع أولياء الأمور والجهات الإشرافية وتوثيق الوارد والصادر", status: "not_started" },
+                { title: "تطوير المهارات التقنية والإدارية من خلال البرامج التدريبية التخصصية", status: "not_started" }
+            ],
+            conclusionText: "<p>وفي ختام هذا الملف، أسأل الله العلي القدير أن يبارك في الجهود وأن يجعل هذا العمل خالصاً لوجهه الكريم، مع خالص الشكر والتقدير لمديرة المدرسة وجميع الزميلات على التعاون والدعم المستمر للارتقاء بالعمل الإداري والتربوي.</p>"
+        };
+
+        // Global Reactive State
+        let state = {
+            currentView: 'dashboard',
+            currentUser: null,
+            ownerUid: null,
+            isOwner: false,
+            portfolio: JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA)),
+            evidences: [],
+            searchQuery: '',
+            filterType: 'all',
+            filterCategory: 'all',
+            replacingEvidence: null,
+            autoSaveTimer: null
+        };
+
+        // =========================================================================
+        // 3. AUTHENTICATION & REAL PERMISSIONS ENFORCEMENT
+        // =========================================================================
+        async function initApp() {
+            renderSidebar();
+            renderCurrentView();
+
+            if (!auth || !db) {
+                showToast('تنبيه: لم يتم العثور على إعدادات الاتصال السحابي في البيئة الحالية.', 'warning');
+                return;
+            }
+
+            try {
+                // Step 1: Initial Auth (Custom token if provided, else Anonymous for public viewing)
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else if (!auth.currentUser) {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.error("Initial Auth Error:", err);
+                try { await signInAnonymously(auth); } catch (e) {}
+            }
+
+            // Listen to Auth State Changes
+            onAuthStateChanged(auth, async (user) => {
+                state.currentUser = user;
+                if (user) {
+                    await checkOwnerLockAndStartListeners(user);
+                }
+            });
+        }
+
+        async function checkOwnerLockAndStartListeners(user) {
+            try {
+                // Check if an owner has already claimed this portfolio
+                const ownerSnap = await getDoc(getOwnerConfigRef());
+                if (ownerSnap.exists()) {
+                    state.ownerUid = ownerSnap.data().ownerUid;
+                } else {
+                    state.ownerUid = null;
+                }
+
+                // Determine if current user is the verified non-anonymous Owner
+                state.isOwner = Boolean(
+                    user && 
+                    !user.isAnonymous && 
+                    state.ownerUid && 
+                    user.uid === state.ownerUid
+                );
+
+                updateAuthUI();
+                startRealtimeListeners();
+            } catch (error) {
+                console.error("Permission Check Error:", error);
+                startRealtimeListeners();
+            }
+        }
+
+        function startRealtimeListeners() {
+            if (!state.currentUser) return;
+
+            // Listener 1: Portfolio Settings & Text Content
+            onSnapshot(getPortfolioDocRef(), (docSnap) => {
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    state.portfolio = {
+                        ...DEFAULT_PORTFOLIO_DATA,
+                        ...data,
+                        cv: { ...DEFAULT_PORTFOLIO_DATA.cv, ...(data.cv || {}) },
+                        goals: Array.isArray(data.goals) && data.goals.length === 5 ? data.goals : DEFAULT_PORTFOLIO_DATA.goals
+                    };
+                } else if (state.isOwner) {
+                    // Initialize default document in cloud if owner logs in first time
+                    setDoc(getPortfolioDocRef(), state.portfolio).catch(console.error);
+                }
+                renderCurrentView();
+            }, (err) => {
+                console.error("Portfolio Snapshot Error:", err);
+            });
+
+            // Listener 2: Evidences Collection (Simple query per rules, sort in JS)
+            onSnapshot(getEvidencesColRef(), (querySnap) => {
+                const items = [];
+                querySnap.forEach((docItem) => {
+                    items.push({ id: docItem.id, ...docItem.data() });
+                });
+                // Sort newest first in memory
+                items.sort((a, b) => (b.createdAtMs || 0) - (a.createdAtMs || 0));
+                state.evidences = items;
+                renderCurrentView();
+            }, (err) => {
+                console.error("Evidences Snapshot Error:", err);
+            });
+        }
+
+        window.handleOwnerAuth = async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value;
+            const btn = document.getElementById('authSubmitBtn');
+            
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>جاري التحقق وتأمين الجلسة...</span>`;
+
+            try {
+                // Check owner lock status first
+                const ownerSnap = await getDoc(getOwnerConfigRef());
+                const existingOwnerUid = ownerSnap.exists() ? ownerSnap.data().ownerUid : null;
+
+                let userCred;
+                try {
+                    userCred = await signInWithEmailAndPassword(auth, email, password);
+                } catch (signInErr) {
+                    // If no owner exists yet and user doesn't exist, allow registering the sole owner account
+                    if (!existingOwnerUid && (signInErr.code === 'auth/user-not-found' || signInErr.code === 'auth/invalid-credential')) {
+                        userCred = await createUserWithEmailAndPassword(auth, email, password);
+                    } else {
+                        throw signInErr;
+                    }
+                }
+
+                const loggedUser = userCred.user;
+
+                // Lock ownership to the first registered owner account
+                if (!existingOwnerUid) {
+                    await setDoc(getOwnerConfigRef(), {
+                        ownerUid: loggedUser.uid,
+                        ownerEmail: loggedUser.email,
+                        claimedAt: new Date().toISOString()
+                    });
+                    // Ensure initial portfolio doc exists
+                    const pSnap = await getDoc(getPortfolioDocRef());
+                    if (!pSnap.exists()) {
+                        await setDoc(getPortfolioDocRef(), state.portfolio);
+                    }
+                    state.ownerUid = loggedUser.uid;
+                    state.isOwner = true;
+                    showToast('تم إنشاء حساب صاحبة الملف وتأمين الصلاحيات لكِ بنجاح!', 'success');
+                } else if (loggedUser.uid === existingOwnerUid) {
+                    state.ownerUid = existingOwnerUid;
+                    state.isOwner = true;
+                    showToast('أهلاً بكِ! تم تسجيل الدخول بصلاحيات الإدارة الكاملة.', 'success');
+                } else {
+                    // Unauthorized account attempt -> Revert immediately to anonymous viewer
+                    await signOut(auth);
+                    await signInAnonymously(auth);
+                    state.isOwner = false;
+                    showToast('عذراً، هذا الملف محمي ومرتبط بحساب صاحبة الملف فقط.', 'error');
+                }
+
+                closeAuthModal();
+                updateAuthUI();
+                renderCurrentView();
+            } catch (error) {
+                console.error("Auth Error:", error);
+                let msg = 'تعذر تسجيل الدخول. تأكدي من صحة البريد الإلكتروني وكلمة المرور.';
+                if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+                    msg = 'بيانات الدخول غير صحيحة أو الحساب محمي بصلاحيات المالك.';
+                } else if (error.code === 'auth/weak-password') {
+                    msg = 'كلمة المرور يجب أن تكون 6 أحرف على الأقل.';
+                }
+                showToast(msg, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-right-to-bracket"></i> <span>دخول لوحة الإدارة</span>`;
+            }
+        };
+
+        window.handleOwnerLogout = async function() {
+            try {
+                await signOut(auth);
+                await signInAnonymously(auth);
+                state.isOwner = false;
+                updateAuthUI();
+                renderCurrentView();
+                showToast('تم تسجيل الخروج والعودة إلى وضع المشاهدة.', 'info');
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        function updateAuthUI() {
+            const roleBadge = document.getElementById('roleStatusBadge');
+            const sidebarBtn = document.getElementById('sidebarAuthBtn');
+            const topBtn = document.getElementById('topOwnerActionBtn');
+
+            if (state.isOwner) {
+                roleBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500"></span> <span class="text-emerald-700">وضع الإدارة (صاحبة الملف)</span>`;
+                sidebarBtn.textContent = 'خروج';
+                sidebarBtn.onclick = handleOwnerLogout;
+                topBtn.innerHTML = `<i class="fa-solid fa-right-from-bracket"></i> <span class="hidden sm:inline">خروج الإدارة</span>`;
+                topBtn.onclick = handleOwnerLogout;
+                topBtn.classList.remove('btn-gradient');
+                topBtn.classList.add('bg-brand-navy', 'hover:bg-brand-ocean');
+            } else {
+                roleBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-brand-turquoise animate-pulse"></span> <span>وضع المشاهدة للزوار</span>`;
+                sidebarBtn.textContent = 'دخول الإدارة';
+                sidebarBtn.onclick = openAuthModal;
+                topBtn.innerHTML = `<i class="fa-solid fa-lock"></i> <span class="hidden sm:inline">إدارة الملف</span>`;
+                topBtn.onclick = openAuthModal;
+                topBtn.classList.add('btn-gradient');
+                topBtn.classList.remove('bg-brand-navy');
+            }
+        }
+
+        // =========================================================================
+        // 4. CLOUD SAVE OPERATIONS (TEXT, SETTINGS, GOALS, CV, LOGOS)
+        // =========================================================================
+        async function savePortfolioUpdates(partialData, silent = false) {
+            if (!state.isOwner) {
+                showToast('عذراً، التعديل متاح لصاحبة الملف فقط.', 'error');
+                return false;
+            }
+            try {
+                state.portfolio = { ...state.portfolio, ...partialData };
+                await setDoc(getPortfolioDocRef(), state.portfolio, { merge: true });
+                if (!silent) {
+                    showToast('تم حفظ التغييرات في التخزين السحابي بنجاح.', 'success');
+                }
+                return true;
+            } catch (error) {
+                console.error("Save Error:", error);
+                showToast('حدث خطأ أثناء الحفظ السحابي. يرجى التحقق من الاتصال.', 'error');
+                return false;
+            }
+        }
+
+        window.saveCoverDetails = async function(e) {
+            e.preventDefault();
+            if (!state.isOwner) return;
+            const updates = {
+                schoolName: document.getElementById('inputSchoolName').value.trim(),
+                assistantName: document.getElementById('inputAssistantName').value.trim(),
+                principalName: document.getElementById('inputPrincipalName').value.trim(),
+                academicYear: document.getElementById('inputAcademicYear').value.trim() || '1448هـ'
+            };
+            await savePortfolioUpdates(updates);
+        };
+
+        window.saveRichTextField = async function(fieldKey, editorId, silent = false) {
+            if (!state.isOwner) return;
+            const editorEl = document.getElementById(editorId);
+            if (!editorEl) return;
+            await savePortfolioUpdates({ [fieldKey]: editorEl.innerHTML }, silent);
+        };
+
+        window.triggerAutoSave = function(fieldKey, editorId) {
+            if (!state.isOwner) return;
+            clearTimeout(state.autoSaveTimer);
+            const statusEl = document.getElementById('autoSaveStatus');
+            if (statusEl) statusEl.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-brand-turquoise"></i> جاري الحفظ التلقائي...`;
+            
+            state.autoSaveTimer = setTimeout(async () => {
+                const ok = await saveRichTextField(fieldKey, editorId, true);
+                if (statusEl && ok) {
+                    statusEl.innerHTML = `<i class="fa-solid fa-check text-emerald-600"></i> تم الحفظ تلقائياً`;
+                }
+            }, 1500);
+        };
+
+        window.saveVisionMissionValues = async function() {
+            if (!state.isOwner) return;
+            const updates = {
+                visionText: document.getElementById('editor_vision').innerHTML,
+                missionText: document.getElementById('editor_mission').innerHTML,
+                valuesText: document.getElementById('editor_values').innerHTML
+            };
+            await savePortfolioUpdates(updates);
+        };
+
+        window.saveCvDetails = async function(e) {
+            e.preventDefault();
+            if (!state.isOwner) return;
+            const cvUpdates = {
+                ...state.portfolio.cv,
+                fullName: document.getElementById('cvFullName').value.trim(),
+                qualification: document.getElementById('cvQualification').value.trim(),
+                experienceYears: document.getElementById('cvExperience').value.trim(),
+                startDate: document.getElementById('cvStartDate').value.trim(),
+                jobTitle: document.getElementById('cvJobTitle').value.trim()
+            };
+            await savePortfolioUpdates({ cv: cvUpdates });
+        };
+
+        window.saveGoalMeta = async function(goalIndex) {
+            if (!state.isOwner) return;
+            const titleInput = document.getElementById(`goalTitle_${goalIndex}`);
+            const statusSelect = document.getElementById(`goalStatus_${goalIndex}`);
+            if (!titleInput || !statusSelect) return;
+
+            const updatedGoals = [...state.portfolio.goals];
+            updatedGoals[goalIndex] = {
+                title: titleInput.value.trim(),
+                status: statusSelect.value
+            };
+            await savePortfolioUpdates({ goals: updatedGoals });
+        };
+
+        // Upload Logo or CV Avatar to Firebase Storage
+        window.handleProfileAssetUpload = async function(event, targetType) {
+            if (!state.isOwner) return;
+            const file = event.target.files[0];
+            if (!file) return;
+
+            showToast('جاري رفع الصورة إلى التخزين السحابي...', 'info');
+            try {
+                const storagePath = `artifacts/${appId}/assets/${targetType}_${Date.now()}_${file.name}`;
+                const fileRef = ref(storage, storagePath);
+                const uploadTask = await uploadBytesResumable(fileRef, file);
+                const downloadURL = await getDownloadURL(uploadTask.ref);
+
+                if (targetType === 'moeLogo') {
+                    await savePortfolioUpdates({ moeLogoUrl: downloadURL });
+                } else if (targetType === 'schoolLogo') {
+                    await savePortfolioUpdates({ schoolLogoUrl: downloadURL });
+                } else if (targetType === 'cvPhoto') {
+                    await savePortfolioUpdates({ cv: { ...state.portfolio.cv, photoUrl: downloadURL } });
+                }
+            } catch (err) {
+                console.error("Asset Upload Error:", err);
+                showToast('فشل رفع الصورة. تأكدي من الاتصال وحجم الملف.', 'error');
+            }
+        };
+
+        // =========================================================================
+        // 5. UNIFIED EVIDENCE UPLOAD, REPLACE & DELETE SYSTEM (FIREBASE STORAGE)
+        // =========================================================================
+        function classifyFileType(fileName, mimeType = '') {
+            const ext = fileName.split('.').pop().toLowerCase();
+            if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(ext) || mimeType.startsWith('image/')) {
+                return { type: 'image', label: 'صورة', icon: 'fa-image', badgeColor: 'bg-emerald-50 text-emerald-700' };
+            }
+            if (ext === 'pdf' || mimeType === 'application/pdf') {
+                return { type: 'pdf', label: 'ملف PDF', icon: 'fa-file-pdf', badgeColor: 'bg-red-50 text-red-600' };
+            }
+            if (['mp4', 'mov', 'avi', 'webm', 'mkv'].includes(ext) || mimeType.startsWith('video/')) {
+                return { type: 'video', label: 'فيديو', icon: 'fa-video', badgeColor: 'bg-purple-50 text-purple-700' };
+            }
+            if (['doc', 'docx'].includes(ext)) {
+                return { type: 'doc', label: 'مستند Word', icon: 'fa-file-word', badgeColor: 'bg-blue-50 text-blue-700' };
+            }
+            if (['xls', 'xlsx'].includes(ext)) {
+                return { type: 'doc', label: 'جدول Excel', icon: 'fa-file-excel', badgeColor: 'bg-green-50 text-green-700' };
+            }
+            if (['ppt', 'pptx'].includes(ext)) {
+                return { type: 'doc', label: 'عرض PowerPoint', icon: 'fa-file-powerpoint', badgeColor: 'bg-orange-50 text-orange-700' };
+            }
+            return { type: 'doc', label: 'مستند', icon: 'fa-file-lines', badgeColor: 'bg-sky-50 text-brand-ocean' };
+        }
+
+        function formatHijriOrGregorianDate() {
+            try {
+                return new Intl.DateTimeFormat('ar-SA-u-ca-islamic', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                }).format(new Date());
+            } catch (e) {
+                return new Date().toLocaleDateString('ar-SA');
+            }
+        }
+
+        window.handleEvidenceFilesUpload = async function(filesList, categoryId) {
+            if (!state.isOwner) {
+                showToast('إضافة الشواهد متاحة لصاحبة الملف فقط.', 'error');
+                return;
+            }
+            const files = Array.from(filesList);
+            if (!files.length) return;
+
+            const customTitleInput = document.getElementById('optionalEvidenceTitle');
+            const customTitle = customTitleInput ? customTitleInput.value.trim() : '';
+
+            const progressWrapper = document.getElementById('uploadProgressWrapper');
+            const progressBar = document.getElementById('uploadProgressBar');
+            const progressText = document.getElementById('uploadProgressText');
+
+            if (progressWrapper) progressWrapper.classList.remove('hidden');
+
+            let successCount = 0;
+            const sectionObj = SECTIONS_INDEX.find(s => s.id === categoryId || s.category === categoryId);
+            const sectionTitle = sectionObj ? sectionObj.title : 'الشواهد';
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const fileMeta = classifyFileType(file.name, file.type);
+                const cleanBaseName = file.name.replace(/\.[^/.]+$/, "");
+                const finalTitle = (files.length === 1 && customTitle) ? customTitle : (customTitle ? `${customTitle} (${i + 1})` : cleanBaseName);
+
+                const storagePath = `artifacts/${appId}/evidences/${categoryId}/${Date.now()}_${file.name}`;
+                const storageRef = ref(storage, storagePath);
+
+                try {
+                    await new Promise((resolve, reject) => {
+                        const uploadTask = uploadBytesResumable(storageRef, file);
+                        uploadTask.on('state_changed',
+                            (snapshot) => {
+                                const filePct = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                const totalPct = Math.round(((i + (filePct / 100)) / files.length) * 100);
+                                if (progressBar) progressBar.style.width = `${totalPct}%`;
+                                if (progressText) progressText.textContent = `جاري رفع (${i + 1} من ${files.length}): ${file.name} (${totalPct}%)`;
+                            },
+                            (error) => reject(error),
+                            async () => {
+                                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                                // Save metadata in Firestore ONLY after actual Storage upload succeeds
+                                await addDoc(getEvidencesColRef(), {
+                                    title: finalTitle,
+                                    fileName: file.name,
+                                    fileType: fileMeta.type,
+                                    fileTypeLabel: fileMeta.label,
+                                    mimeType: file.type || '',
+                                    fileSize: file.size,
+                                    category: categoryId,
+                                    sectionTitle: sectionTitle,
+                                    url: downloadURL,
+                                    storagePath: storagePath,
+                                    dateFormatted: formatHijriOrGregorianDate(),
+                                    createdAtMs: Date.now()
+                                });
+                                successCount++;
+                                resolve();
+                            }
+                        );
+                    });
+                } catch (err) {
+                    console.error("Upload failed for:", file.name, err);
+                    showToast(`فشل رفع الملف: ${file.name}`, 'error');
+                }
+            }
+
+            if (progressWrapper) {
+                setTimeout(() => progressWrapper.classList.add('hidden'), 1200);
+            }
+            if (customTitleInput) customTitleInput.value = '';
+
+            if (successCount > 0) {
+                showToast(`تم رفع وحفظ ${successCount} ${successCount === 1 ? 'شاهد' : 'شواهد'} في التخزين السحابي بنجاح!`, 'success');
+            }
+        };
+
+        window.triggerReplaceEvidence = function(evidenceId) {
+            if (!state.isOwner) return;
+            const ev = state.evidences.find(item => item.id === evidenceId);
+            if (!ev) return;
+            state.replacingEvidence = ev;
+            document.getElementById('replaceFileInput').click();
+        };
+
+        window.handleReplaceFileSelected = async function(event) {
+            const file = event.target.files[0];
+            const oldEv = state.replacingEvidence;
+            event.target.value = '';
+            if (!file || !oldEv || !state.isOwner) return;
+
+            showToast('جاري استبدال الملف في التخزين السحابي...', 'info');
+            try {
+                const fileMeta = classifyFileType(file.name, file.type);
+                const newStoragePath = `artifacts/${appId}/evidences/${oldEv.category}/${Date.now()}_${file.name}`;
+                const newStorageRef = ref(storage, newStoragePath);
+                const uploadSnap = await uploadBytesResumable(newStorageRef, file);
+                const newUrl = await getDownloadURL(uploadSnap.ref);
+
+                // Update Firestore document
+                await updateDoc(doc(db, 'artifacts', appId, 'public', 'data', 'evidences', oldEv.id), {
+                    fileName: file.name,
+                    fileType: fileMeta.type,
+                    fileTypeLabel: fileMeta.label,
+                    mimeType: file.type || '',
+                    fileSize: file.size,
+                    url: newUrl,
+                    storagePath: newStoragePath,
+                    dateFormatted: formatHijriOrGregorianDate(),
+                    createdAtMs: Date.now()
+                });
+
+                // Delete old file from Storage silently
+                if (oldEv.storagePath) {
+                    try { await deleteObject(ref(storage, oldEv.storagePath)); } catch (e) {}
+                }
+
+                showToast('تم استبدال الشاهد بنجاح!', 'success');
+            } catch (err) {
+                console.error("Replace Error:", err);
+                showToast('حدث خطأ أثناء استبدال الملف.', 'error');
+            } finally {
+                state.replacingEvidence = null;
+            }
+        };
+
+        window.confirmDeleteEvidence = function(evidenceId) {
+            if (!state.isOwner) return;
+            const ev = state.evidences.find(item => item.id === evidenceId);
+            if (!ev) return;
+
+            openConfirmModal(
+                'حذف الشاهد نهائياً',
+                `هل أنتِ متأكدة من حذف "${ev.title}"؟ سيتم حذفه من التخزين السحابي نهائياً.`,
+                async () => {
+                    try {
+                        await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'evidences', ev.id));
+                        if (ev.storagePath) {
+                            try { await deleteObject(ref(storage, ev.storagePath)); } catch (e) {}
+                        }
+                        showToast('تم حذف الشاهد من السحابة بنجاح.', 'success');
+                    } catch (err) {
+                        console.error("Delete Error:", err);
+                        showToast('تعذر حذف الشاهد. يرجى المحاولة مرة أخرى.', 'error');
+                    }
+                }
+            );
+        };
+
+        // =========================================================================
+        // 6. STATISTICS CALCULATION
+        // =========================================================================
+        function computeStats() {
+            const all = state.evidences;
+            const imagesCount = all.filter(e => e.fileType === 'image').length;
+            const pdfCount = all.filter(e => e.fileType === 'pdf').length;
+            const videoCount = all.filter(e => e.fileType === 'video').length;
+            const docCount = all.filter(e => e.fileType === 'doc').length;
+
+            const initiativesCount = all.filter(e => e.category === 'initiatives').length;
+            const coursesCount = all.filter(e => e.category === 'courses').length;
+            const volunteeringCount = all.filter(e => e.category === 'volunteering').length;
+            const certificatesCount = all.filter(e => e.category === 'certificates').length;
+
+            // Calculate 5 Goals Completion Percentage
+            // completed = 100%, in_progress = 50%, not_started = 0%
+            const goals = state.portfolio.goals || [];
+            let points = 0;
+            goals.forEach(g => {
+                if (g.status === 'completed') points += 100;
+                else if (g.status === 'in_progress') points += 50;
+            });
+            const goalsPercentage = goals.length ? Math.round(points / goals.length) : 0;
+
+            return {
+                total: all.length,
+                imagesCount,
+                pdfCount,
+                videoCount,
+                docCount,
+                initiativesCount,
+                coursesCount,
+                volunteeringCount,
+                certificatesCount,
+                goalsPercentage
+            };
+        }
+
+        // =========================================================================
+        // 7. NAVIGATION & RENDERING ENGINE
+        // =========================================================================
+        function renderSidebar() {
+            const nav = document.getElementById('sidebarNav');
+            nav.innerHTML = SECTIONS_INDEX.map(sec => {
+                const isActive = state.currentView === sec.id;
+                const count = getSectionEvidenceCount(sec);
+                return `
+                    <button onclick="navigateTo('${sec.id}')" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-right text-xs sm:text-[13px] font-semibold transition-all ${
+                        isActive 
+                        ? 'btn-gradient text-white shadow-sm' 
+                        : 'text-brand-navy hover:bg-brand-bg'
+                    }">
+                        <div class="flex items-center gap-2.5 truncate">
+                            <span class="w-6 h-6 rounded-lg flex items-center justify-center text-[11px] font-bold shrink-0 ${
+                                isActive ? 'bg-white/20 text-white' : 'bg-brand-ice/70 text-brand-ocean'
+                            }">
+                                ${sec.num ? sec.num : `<i class="fa-solid ${sec.icon}"></i>`}
+                            </span>
+                            <span class="truncate">${sec.title}</span>
+                        </div>
+                        ${count !== null ? `
+                            <span class="text-[11px] px-2 py-0.5 rounded-full font-bold shrink-0 ${
+                                isActive ? 'bg-white/25 text-white' : 'bg-brand-bg text-brand-ocean'
+                            }">${count}</span>
+                        ` : ''}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function getSectionEvidenceCount(sec) {
+            if (sec.type === 'goal') {
+                return state.evidences.filter(e => e.category === sec.id).length;
+            }
+            if (sec.type === 'evidence') {
+                if (sec.category === 'evidences_lib') return state.evidences.length;
+                return state.evidences.filter(e => e.category === sec.category).length;
+            }
+            return null;
+        }
+
+        window.navigateTo = function(viewId) {
+            state.currentView = viewId;
+            renderSidebar();
+            renderCurrentView();
+            // Close sidebar on mobile
+            if (window.innerWidth < 1024) {
+                const sb = document.getElementById('sidebar');
+                const bd = document.getElementById('sidebarBackdrop');
+                sb.classList.add('translate-x-full');
+                bd.classList.add('hidden');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.toggleSidebar = function() {
+            const sb = document.getElementById('sidebar');
+            const bd = document.getElementById('sidebarBackdrop');
+            sb.classList.toggle('translate-x-full');
+            bd.classList.toggle('hidden');
+        };
+
+        function renderCurrentView() {
+            renderSidebar();
+            const container = document.getElementById('appViewContainer');
+            const breadcrumb = document.getElementById('breadcrumbSection');
+            const sec = SECTIONS_INDEX.find(s => s.id === state.currentView);
+
+            if (state.currentView === 'search') {
+                breadcrumb.textContent = 'البحث وتصفية الشواهد';
+                container.innerHTML = renderSearchView();
+                return;
+            }
+
+            if (!sec || sec.id === 'dashboard') {
+                breadcrumb.textContent = 'لوحة التحكم الرئيسية';
+                container.innerHTML = renderDashboardView();
+                generateQRCode('dashboardQrCode', 92);
+                return;
+            }
+
+            breadcrumb.textContent = sec.num ? `${sec.num}. ${sec.title}` : sec.title;
+
+            switch (sec.type) {
+                case 'cover':
+                    container.innerHTML = renderCoverView();
+                    generateQRCode('coverQrCode', 120);
+                    break;
+                case 'editor':
+                    container.innerHTML = renderRichEditorView(sec);
+                    break;
+                case 'vision_mission':
+                    container.innerHTML = renderVisionMissionView(sec);
+                    break;
+                case 'cv':
+                    container.innerHTML = renderCvView(sec);
+                    break;
+                case 'goal':
+                    container.innerHTML = renderGoalView(sec);
+                    break;
+                case 'evidence':
+                    container.innerHTML = renderEvidenceSectionView(sec);
+                    break;
+            }
+        }
+
+        // =========================================================================
+        // 8. VIEW TEMPLATES
+        // =========================================================================
+
+        // A. MAIN DASHBOARD VIEW
+        function renderDashboardView() {
+            const p = state.portfolio;
+            const stats = computeStats();
+            const recentEvidences = state.evidences.slice(0, 6);
+
+            return `
+                <div class="space-y-6">
+                    <!-- Top Official Header Banner -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-brand-ice/80 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-40 h-40 bg-brand-ice/40 rounded-full -translate-x-16 -translate-y-16 pointer-events-none"></div>
+                        <div class="absolute bottom-0 right-0 w-32 h-32 bg-brand-mint/50 rounded-full translate-x-12 translate-y-12 pointer-events-none"></div>
+
+                        <div class="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+                            <!-- Right: Ministry Logo + Main Title & Metadata -->
+                            <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-right gap-5 flex-1">
+                                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-brand-bg p-2.5 border border-brand-ice flex items-center justify-center shrink-0 shadow-xs">
+                                    <img src="${p.moeLogoUrl || DEFAULT_MOE_LOGO}" onerror="this.src='${DEFAULT_MOE_LOGO}'" alt="شعار وزارة التعليم" class="max-h-full max-w-full object-contain">
+                                </div>
+                                <div class="space-y-2 flex-1">
+                                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-ice/70 text-brand-ocean text-xs font-bold">
+                                        <i class="fa-solid fa-sparkles text-brand-gold"></i>
+                                        <span>مرحباً بكِ في ملف الإنجاز الإلكتروني</span>
+                                    </div>
+                                    <h1 class="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
+                                        ملف الأداء الوظيفي للمساعد الإداري
+                                    </h1>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-2">
+                                        <div class="bg-brand-bg/80 px-3.5 py-2 rounded-xl border border-gray-100">
+                                            <span class="block text-[11px] text-brand-muted">اسم المدرسة</span>
+                                            <span class="font-bold text-xs sm:text-sm text-brand-navy">${escapeHtml(p.schoolName)}</span>
+                                        </div>
+                                        <div class="bg-brand-bg/80 px-3.5 py-2 rounded-xl border border-gray-100">
+                                            <span class="block text-[11px] text-brand-muted">اسم المساعد الإداري</span>
+                                            <span class="font-bold text-xs sm:text-sm text-brand-ocean">${escapeHtml(p.assistantName)}</span>
+                                        </div>
+                                        <div class="bg-brand-bg/80 px-3.5 py-2 rounded-xl border border-gray-100">
+                                            <span class="block text-[11px] text-brand-muted">اسم مديرة المدرسة</span>
+                                            <span class="font-bold text-xs sm:text-sm text-brand-navy">${escapeHtml(p.principalName)}</span>
+                                        </div>
+                                        <div class="bg-brand-ice/50 px-3.5 py-2 rounded-xl border border-brand-ice">
+                                            <span class="block text-[11px] text-brand-ocean">العام الدراسي</span>
+                                            <span class="font-extrabold text-xs sm:text-sm text-brand-navy">${escapeHtml(p.academicYear)}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left: School Logo + Dynamic QR Code -->
+                            <div class="flex items-center gap-4 shrink-0 bg-brand-bg/60 p-3.5 rounded-2xl border border-brand-ice">
+                                <div class="text-center">
+                                    <div class="w-20 h-20 rounded-xl bg-white p-1.5 border border-gray-100 flex items-center justify-center mx-auto">
+                                        <img src="${p.schoolLogoUrl || DEFAULT_SCHOOL_LOGO}" onerror="this.src='${DEFAULT_SCHOOL_LOGO}'" alt="شعار المدرسة" class="max-h-full max-w-full object-contain rounded-lg">
+                                    </div>
+                                    <span class="block text-[10px] font-bold text-brand-muted mt-1">شعار المدرسة</span>
+                                </div>
+                                <div class="h-16 w-px bg-brand-ice"></div>
+                                <div class="text-center">
+                                    <div id="dashboardQrCode" class="bg-white p-1.5 rounded-xl border border-gray-100 inline-block"></div>
+                                    <span class="block text-[10px] font-bold text-brand-ocean mt-1">امسح للمشاهدة</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${state.isOwner ? `
+                            <div class="mt-5 pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
+                                <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-check"></i> أنتِ مسجلة بصلاحية صاحبة الملف (تعديل وإضافة وحذف)
+                                </span>
+                                <button onclick="navigateTo('cover')" class="px-4 py-2 rounded-xl bg-brand-ice text-brand-ocean hover:bg-brand-ocean hover:text-white text-xs font-bold transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-pen-to-square"></i> تعديل بيانات الغلاف والمدرسة والشعارات
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- Primary Statistics Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                        <!-- Total Evidences -->
+                        <div onclick="navigateTo('evidences_lib')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-gray-100 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-brand-ice text-brand-ocean flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-bg text-brand-muted">الإجمالي</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-brand-ocean">${stats.total}</div>
+                            <div class="text-xs font-bold text-brand-navy mt-1">إجمالي الشواهد المرفوعة</div>
+                        </div>
+
+                        <!-- Initiatives -->
+                        <div onclick="navigateTo('initiatives')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-gray-100 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-purple-50/60 text-purple-600">بند 14</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-brand-ocean">${stats.initiativesCount}</div>
+                            <div class="text-xs font-bold text-brand-navy mt-1">المبادرات</div>
+                        </div>
+
+                        <!-- Training Courses -->
+                        <div onclick="navigateTo('courses')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-gray-100 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-sky-50 text-brand-medium flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-sky-50 text-brand-medium">بند 15</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-brand-ocean">${stats.coursesCount}</div>
+                            <div class="text-xs font-bold text-brand-navy mt-1">الدورات التدريبية</div>
+                        </div>
+
+                        <!-- Volunteering -->
+                        <div onclick="navigateTo('volunteering')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-gray-100 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-brand-mint text-emerald-700 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-mint text-emerald-700">بند 16</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-brand-ocean">${stats.volunteeringCount}</div>
+                            <div class="text-xs font-bold text-brand-navy mt-1">الأعمال التطوعية</div>
+                        </div>
+
+                        <!-- Appreciation Certificates -->
+                        <div onclick="navigateTo('certificates')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-gray-100 transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-600">بند 17</span>
+                            </div>
+                            <div class="text-3xl font-extrabold text-brand-ocean">${stats.certificatesCount}</div>
+                            <div class="text-xs font-bold text-brand-navy mt-1">شهادات الشكر والتقدير</div>
+                        </div>
+
+                        <!-- 5 Goals Progress Indicator -->
+                        <div onclick="navigateTo('goal_1')" class="cursor-pointer bg-white rounded-2xl p-5 shadow-card hover:shadow-hover border border-brand-ice transition-all group">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-11 h-11 rounded-xl bg-brand-ice text-brand-turquoise flex items-center justify-center text-lg group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-ice text-brand-ocean">الأهداف الـ 5</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div class="text-3xl font-extrabold text-brand-ocean">${stats.goalsPercentage}%</div>
+                                <span class="text-[11px] text-brand-muted mb-1">نسبة الإنجاز</span>
+                            </div>
+                            <div class="w-full h-2 bg-brand-bg rounded-full mt-2 overflow-hidden">
+                                <div class="h-full btn-gradient rounded-full transition-all duration-500" style="width: ${stats.goalsPercentage}%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- File Types Breakdown Strip + 5 Goals Quick Tracker -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- 5 Professional Goals Tracker -->
+                        <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow-card border border-gray-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-xl bg-brand-ice text-brand-ocean flex items-center justify-center">
+                                        <i class="fa-solid fa-list-check"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-bold text-brand-navy text-base">مؤشر إنجاز الأهداف المهنية الخمسة</h2>
+                                        <p class="text-xs text-brand-muted">اضغطي على أي هدف لرفع شواهده أو تحديث حالته</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-brand-ice text-brand-ocean font-extrabold text-sm">${stats.goalsPercentage}%</span>
+                            </div>
+
+                            <div class="space-y-2.5">
+                                ${p.goals.map((g, idx) => {
+                                    const badge = getGoalStatusBadge(g.status);
+                                    const gCount = state.evidences.filter(e => e.category === `goal_${idx + 1}`).length;
+                                    return `
+                                        <div onclick="navigateTo('goal_${idx + 1}')" class="cursor-pointer p-3.5 rounded-2xl bg-brand-bg/60 hover:bg-brand-ice/40 border border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 transition">
+                                            <div class="flex items-center gap-3 min-w-0">
+                                                <span class="w-7 h-7 rounded-lg bg-white text-brand-ocean font-extrabold text-xs flex items-center justify-center shadow-2xs shrink-0">${idx + 1}</span>
+                                                <span class="text-xs sm:text-sm font-bold text-brand-navy truncate">${escapeHtml(g.title)}</span>
+                                            </div>
+                                            <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                                                <span class="text-[11px] font-semibold text-brand-muted bg-white px-2.5 py-1 rounded-lg border border-gray-100">${gCount} شواهد</span>
+                                                <span class="text-[11px] font-bold px-2.5 py-1 rounded-lg ${badge.cls}">${badge.label}</span>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <!-- File Types Summary Card -->
+                        <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2.5 mb-4">
+                                    <div class="w-9 h-9 rounded-xl bg-brand-mint text-emerald-700 flex items-center justify-center">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-bold text-brand-navy text-base">تصنيف الملفات المرفوعة</h2>
+                                        <p class="text-xs text-brand-muted">توزيع الشواهد حسب الصيغة</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div onclick="filterAndGoSearch('image')" class="cursor-pointer flex items-center justify-between p-3 rounded-2xl bg-emerald-50/60 hover:bg-emerald-50 transition">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-xl bg-white text-emerald-600 flex items-center justify-center shadow-2xs"><i class="fa-solid fa-image"></i></div>
+                                            <span class="text-sm font-bold text-brand-navy">الصور واللقطات</span>
+                                        </div>
+                                        <span class="text-lg font-extrabold text-brand-ocean">${stats.imagesCount}</span>
+                                    </div>
+
+                                    <div onclick="filterAndGoSearch('pdf')" class="cursor-pointer flex items-center justify-between p-3 rounded-2xl bg-red-50/60 hover:bg-red-50 transition">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-xl bg-white text-red-500 flex items-center justify-center shadow-2xs"><i class="fa-solid fa-file-pdf"></i></div>
+                                            <span class="text-sm font-bold text-brand-navy">ملفات PDF</span>
+                                        </div>
+                                        <span class="text-lg font-extrabold text-brand-ocean">${stats.pdfCount}</span>
+                                    </div>
+
+                                    <div onclick="filterAndGoSearch('video')" class="cursor-pointer flex items-center justify-between p-3 rounded-2xl bg-purple-50/60 hover:bg-purple-50 transition">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-xl bg-white text-purple-600 flex items-center justify-center shadow-2xs"><i class="fa-solid fa-video"></i></div>
+                                            <span class="text-sm font-bold text-brand-navy">الفيديوهات</span>
+                                        </div>
+                                        <span class="text-lg font-extrabold text-brand-ocean">${stats.videoCount}</span>
+                                    </div>
+
+                                    <div onclick="filterAndGoSearch('doc')" class="cursor-pointer flex items-center justify-between p-3 rounded-2xl bg-brand-ice/50 hover:bg-brand-ice/80 transition">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-xl bg-white text-brand-ocean flex items-center justify-center shadow-2xs"><i class="fa-solid fa-file-word"></i></div>
+                                            <span class="text-sm font-bold text-brand-navy">المستندات والتقارير</span>
+                                        </div>
+                                        <span class="text-lg font-extrabold text-brand-ocean">${stats.docCount}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="navigateTo('evidences_lib')" class="mt-5 w-full py-2.5 rounded-xl btn-gradient text-white text-xs font-bold flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-folder-tree"></i> الانتقال إلى مكتبة جميع الشواهد
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Complete Interactive Index Grid -->
+                    <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-xl bg-brand-ice text-brand-ocean flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-extrabold text-brand-navy text-lg">فهرس أقسام ملف الإنجاز</h2>
+                                    <p class="text-xs text-brand-muted">اضغط على أي بند للانتقال المباشر وعرض محتوياته وشواهده</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+                            ${SECTIONS_INDEX.filter(s => s.id !== 'dashboard').map(sec => {
+                                const c = getSectionEvidenceCount(sec);
+                                return `
+                                    <div onclick="navigateTo('${sec.id}')" class="cursor-pointer p-4 rounded-2xl bg-brand-bg/50 hover:bg-white border border-gray-100 hover:border-brand-turquoise/50 hover:shadow-hover transition-all flex items-center justify-between gap-3 group">
+                                        <div class="flex items-center gap-3 min-w-0">
+                                            <div class="w-10 h-10 rounded-xl ${sec.color} flex items-center justify-center font-extrabold text-sm shrink-0 group-hover:scale-105 transition">
+                                                ${sec.num !== 'الغلاف' ? sec.num : `<i class="fa-solid ${sec.icon}"></i>`}
+                                            </div>
+                                            <div class="min-w-0">
+                                                <h3 class="font-bold text-brand-navy text-xs sm:text-sm truncate group-hover:text-brand-ocean transition">${sec.title}</h3>
+                                                <span class="text-[11px] text-brand-muted">${c !== null ? `${c} شواهد مرفوعة` : 'قسم تعريفي ونصي'}</span>
+                                            </div>
+                                        </div>
+                                        <i class="fa-solid fa-chevron-left text-xs text-brand-muted group-hover:text-brand-turquoise group-hover:-translate-x-1 transition"></i>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Latest Added Evidences Section -->
+                    <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+                                <div>
+                                    <h2 class="font-extrabold text-brand-navy text-lg">أحدث الشواهد المضافة</h2>
+                                    <p class="text-xs text-brand-muted">آخر الملفات والصور والفيديوهات المرفوعة في الأقسام</p>
+                                </div>
+                            </div>
+                            <button onclick="navigateTo('search')" class="text-xs font-bold text-brand-ocean hover:underline">عرض الكل</button>
+                        </div>
+
+                        ${recentEvidences.length > 0 ? `
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                ${recentEvidences.map(ev => renderEvidenceCard(ev, true)).join('')}
+                            </div>
+                        ` : `
+                            <div class="text-center py-10 bg-brand-bg/50 rounded-2xl border border-dashed border-brand-ice">
+                                <i class="fa-regular fa-folder-open text-3xl text-brand-muted mb-2"></i>
+                                <p class="text-sm font-semibold text-brand-navy">لا توجد شواهد مرفوعة حتى الآن</p>
+                                <p class="text-xs text-brand-muted mt-1">يمكن لصاحبة الملف الدخول إلى أي قسم ورفع الشواهد مباشرة</p>
+                            </div>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        // B. COVER PAGE VIEW
+        function renderCoverView() {
+            const p = state.portfolio;
+            return `
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <!-- Official Cover Card -->
+                    <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-soft border-2 border-brand-ice relative overflow-hidden text-center">
+                        <div class="absolute top-0 inset-x-0 h-3 hero-gradient"></div>
+                        
+                        <!-- Logos Row -->
+                        <div class="flex items-center justify-between gap-4 mb-8">
+                            <div class="text-center">
+                                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-brand-bg p-3 border border-brand-ice flex items-center justify-center mx-auto">
+                                    <img src="${p.moeLogoUrl || DEFAULT_MOE_LOGO}" onerror="this.src='${DEFAULT_MOE_LOGO}'" alt="شعار وزارة التعليم" class="max-h-full max-w-full object-contain">
+                                </div>
+                                <span class="block text-xs font-bold text-brand-navy mt-2">وزارة التعليم</span>
+                                ${state.isOwner ? `
+                                    <label class="mt-1.5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-ocean cursor-pointer hover:underline">
+                                        <i class="fa-solid fa-camera"></i> تغيير الشعار
+                                        <input type="file" accept="image/*" class="hidden" onchange="handleProfileAssetUpload(event, 'moeLogo')">
+                                    </label>
+                                ` : ''}
+                            </div>
+
+                            <div class="hidden sm:block">
+                                <span class="px-4 py-1.5 rounded-full bg-brand-ice text-brand-ocean font-extrabold text-xs">المملكة العربية السعودية</span>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-brand-bg p-3 border border-brand-ice flex items-center justify-center mx-auto">
+                                    <img src="${p.schoolLogoUrl || DEFAULT_SCHOOL_LOGO}" onerror="this.src='${DEFAULT_SCHOOL_LOGO}'" alt="شعار المدرسة" class="max-h-full max-w-full object-contain rounded-xl">
+                                </div>
+                                <span class="block text-xs font-bold text-brand-navy mt-2">شعار المدرسة</span>
+                                ${state.isOwner ? `
+                                    <label class="mt-1.5 inline-flex items-center gap-1 text-[11px] font-bold text-brand-ocean cursor-pointer hover:underline">
+                                        <i class="fa-solid fa-camera"></i> تغيير الشعار
+                                        <input type="file" accept="image/*" class="hidden" onchange="handleProfileAssetUpload(event, 'schoolLogo')">
+                                    </label>
+                                ` : ''}
+                            </div>
+                        </div>
+
+                        <!-- Main Cover Titles -->
+                        <div class="my-8 py-8 px-4 rounded-3xl soft-blue-gradient border border-brand-ice">
+                            <span class="inline-block px-4 py-1 rounded-full bg-brand-gold/25 text-brand-navy font-extrabold text-xs mb-3">وثيقة الأداء الوظيفي والمهني</span>
+                            <h1 class="text-2xl sm:text-4xl font-extrabold text-brand-navy leading-relaxed">
+                                ملف الأداء الوظيفي للمساعد الإداري
+                            </h1>
+                            <p class="text-lg sm:text-xl font-bold text-brand-ocean mt-2">
+                                العام الدراسي ${escapeHtml(p.academicYear)}
+                            </p>
+                        </div>
+
+                        <!-- Cover Metadata Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center mb-8">
+                            <div class="p-4 rounded-2xl bg-brand-bg border border-gray-100">
+                                <span class="block text-xs text-brand-muted mb-1">اسم المدرسة</span>
+                                <span class="font-extrabold text-brand-navy text-base">${escapeHtml(p.schoolName)}</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-brand-ice/50 border border-brand-ice">
+                                <span class="block text-xs text-brand-ocean mb-1">إعداد المساعد الإداري</span>
+                                <span class="font-extrabold text-brand-navy text-base">${escapeHtml(p.assistantName)}</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-brand-bg border border-gray-100">
+                                <span class="block text-xs text-brand-muted mb-1">اعتماد مديرة المدرسة</span>
+                                <span class="font-extrabold text-brand-navy text-base">${escapeHtml(p.principalName)}</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic QR Code Section on Cover -->
+                        <div class="inline-flex flex-col items-center p-4 rounded-2xl bg-white border border-brand-ice shadow-xs">
+                            <div id="coverQrCode" class="p-2 bg-white rounded-xl"></div>
+                            <span class="text-xs font-bold text-brand-navy mt-2">رمز الاستجابة السريعة (QR) للملف الإلكتروني</span>
+                            <span class="text-[11px] text-brand-muted">امسح الرمز لفتح الملف في وضع المشاهدة</span>
+                        </div>
+                    </div>
+
+                    <!-- Owner Edit Form for Cover Details -->
+                    ${state.isOwner ? `
+                        <form onsubmit="saveCoverDetails(event)" class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-ice space-y-4">
+                            <h3 class="font-extrabold text-brand-navy text-base flex items-center gap-2">
+                                <i class="fa-solid fa-pen-to-square text-brand-ocean"></i> تعديل بيانات الغلاف والمدرسة
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy mb-1.5">اسم المدرسة</label>
+                                    <input type="text" id="inputSchoolName" value="${escapeHtml(p.schoolName)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy mb-1.5">اسم المساعد الإداري</label>
+                                    <input type="text" id="inputAssistantName" value="${escapeHtml(p.assistantName)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy mb-1.5">اسم مديرة المدرسة</label>
+                                    <input type="text" id="inputPrincipalName" value="${escapeHtml(p.principalName)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy mb-1.5">العام الدراسي</label>
+                                    <input type="text" id="inputAcademicYear" value="${escapeHtml(p.academicYear)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold">
+                                </div>
+                            </div>
+                            <div class="flex justify-end pt-2">
+                                <button type="submit" class="px-6 py-2.5 rounded-xl btn-gradient text-white text-sm font-bold flex items-center gap-2">
+                                    <i class="fa-solid fa-floppy-disk"></i> حفظ بيانات الغلاف
+                                </button>
+                            </div>
+                        </form>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        // C. RICH TEXT EDITOR VIEW (Intro, Edu Goals, Ethics, Conclusion)
+        function renderRichEditorView(sec) {
+            const contentHtml = state.portfolio[sec.field] || '';
+            const editorId = `editor_${sec.id}`;
+
+            return `
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-gray-100 space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-2xl ${sec.color} flex items-center justify-center font-extrabold text-base">
+                                ${sec.num}
+                            </div>
+                            <div>
+                                <h1 class="text-xl font-extrabold text-brand-navy">${sec.title}</h1>
+                                <p class="text-xs text-brand-muted">ملف إنجاز المساعد الإداري — ${escapeHtml(state.portfolio.academicYear)}</p>
+                            </div>
+                        </div>
+                        ${state.isOwner ? `
+                            <div class="flex items-center gap-3">
+                                <span id="autoSaveStatus" class="text-xs text-brand-muted"></span>
+                                <button onclick="saveRichTextField('${sec.field}', '${editorId}')" class="px-5 py-2.5 rounded-xl btn-gradient text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-xs">
+                                    <i class="fa-solid fa-floppy-disk"></i> حفظ النص
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    ${state.isOwner ? `
+                        <!-- Arabic Formatting Toolbar -->
+                        <div class="flex flex-wrap items-center gap-1.5 p-2 rounded-2xl bg-brand-bg border border-brand-ice">
+                            <button type="button" onclick="execFormat('formatBlock', 'H3')" title="عنوان فرعي" class="px-3 py-1.5 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs font-bold transition">عنوان</button>
+                            <button type="button" onclick="execFormat('formatBlock', 'P')" title="فقرة عادية" class="px-3 py-1.5 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs font-medium transition">فقرة</button>
+                            <div class="h-5 w-px bg-gray-300 mx-1"></div>
+                            <button type="button" onclick="execFormat('bold')" title="خط عريض" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs font-bold transition"><i class="fa-solid fa-bold"></i></button>
+                            <button type="button" onclick="execFormat('italic')" title="خط مائل" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-italic"></i></button>
+                            <button type="button" onclick="execFormat('underline')" title="تسطير" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-underline"></i></button>
+                            <div class="h-5 w-px bg-gray-300 mx-1"></div>
+                            <button type="button" onclick="execFormat('insertUnorderedList')" title="قائمة نقطية" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-list-ul"></i></button>
+                            <button type="button" onclick="execFormat('insertOrderedList')" title="قائمة مرقمة" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-list-ol"></i></button>
+                            <div class="h-5 w-px bg-gray-300 mx-1"></div>
+                            <button type="button" onclick="execFormat('justifyRight')" title="محاذاة لليمين" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-align-right"></i></button>
+                            <button type="button" onclick="execFormat('justifyCenter')" title="توسيط" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-align-center"></i></button>
+                            <button type="button" onclick="execFormat('justifyFull')" title="ضبط النص" class="w-8 h-8 rounded-xl bg-white hover:bg-brand-ice text-brand-navy text-xs transition"><i class="fa-solid fa-align-justify"></i></button>
+                        </div>
+
+                        <div id="${editorId}" contenteditable="true" oninput="triggerAutoSave('${sec.field}', '${editorId}')" class="editor-content p-5 rounded-2xl bg-brand-bg/30 border border-gray-200 text-brand-navy text-base">${contentHtml}</div>
+                    ` : `
+                        <div class="editor-content p-6 rounded-2xl bg-brand-bg/40 border border-gray-100 text-brand-navy text-base">${contentHtml}</div>
+                    `}
+                </div>
+            `;
+        }
+
+        // D. VISION, MISSION & VALUES VIEW (3 Independent Sections)
+        function renderVisionMissionView(sec) {
+            const p = state.portfolio;
+            const blocks = [
+                { id: 'vision', title: 'الرؤية', icon: 'fa-eye', color: 'bg-brand-ice text-brand-ocean', html: p.visionText },
+                { id: 'mission', title: 'الرسالة', icon: 'fa-bullseye', color: 'bg-brand-mint text-emerald-700', html: p.missionText },
+                { id: 'values', title: 'القيم المهنية', icon: 'fa-gem', color: 'bg-amber-50 text-amber-600', html: p.valuesText }
+            ];
+
+            return `
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-2xl ${sec.color} flex items-center justify-center font-extrabold text-base">${sec.num}</div>
+                            <div>
+                                <h1 class="text-xl font-extrabold text-brand-navy">${sec.title}</h1>
+                                <p class="text-xs text-brand-muted">التوجهات والقيم المؤسسية للمساعد الإداري</p>
+                            </div>
+                        </div>
+                        ${state.isOwner ? `
+                            <button onclick="saveVisionMissionValues()" class="px-5 py-2.5 rounded-xl btn-gradient text-white text-xs sm:text-sm font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-floppy-disk"></i> حفظ الرؤية والرسالة والقيم
+                            </button>
+                        ` : ''}
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-5">
+                        ${blocks.map(b => `
+                            <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100 space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl ${b.color} flex items-center justify-center text-lg">
+                                        <i class="fa-solid ${b.icon}"></i>
+                                    </div>
+                                    <h2 class="text-lg font-extrabold text-brand-navy">${b.title}</h2>
+                                </div>
+                                ${state.isOwner ? `
+                                    <div id="editor_${b.id}" contenteditable="true" class="editor-content !min-h-[120px] p-4 rounded-2xl bg-brand-bg/40 border border-gray-200 text-brand-navy text-sm sm:text-base">${b.html || ''}</div>
+                                ` : `
+                                    <div class="editor-content !min-h-[80px] p-4 rounded-2xl bg-brand-bg/30 border border-gray-100 text-brand-navy text-sm sm:text-base">${b.html || ''}</div>
+                                `}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // E. CURRICULUM VITAE (CV) VIEW
+        function renderCvView(sec) {
+            const cv = state.portfolio.cv || DEFAULT_PORTFOLIO_DATA.cv;
+            return `
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-gray-100 space-y-6">
+                    <div class="flex items-center gap-3 border-b border-gray-100 pb-4">
+                        <div class="w-11 h-11 rounded-2xl ${sec.color} flex items-center justify-center font-extrabold text-base">${sec.num}</div>
+                        <div>
+                            <h1 class="text-xl font-extrabold text-brand-navy">${sec.title}</h1>
+                            <p class="text-xs text-brand-muted">البيانات الوظيفية الأساسية للمساعد الإداري</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                        <!-- Optional Profile Avatar -->
+                        <div class="text-center shrink-0">
+                            <div class="w-32 h-32 rounded-3xl bg-brand-ice/60 border-2 border-brand-ice flex items-center justify-center overflow-hidden shadow-xs mx-auto">
+                                ${cv.photoUrl 
+                                    ? `<img src="${cv.photoUrl}" alt="الصورة الشخصية" class="w-full h-full object-cover">`
+                                    : `<i class="fa-solid fa-user-tie text-5xl text-brand-ocean/60"></i>`
+                                }
+                            </div>
+                            ${state.isOwner ? `
+                                <label class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-brand-bg hover:bg-brand-ice text-brand-ocean text-xs font-bold cursor-pointer transition">
+                                    <i class="fa-solid fa-camera"></i> صورة شخصية (اختياري)
+                                    <input type="file" accept="image/*" class="hidden" onchange="handleProfileAssetUpload(event, 'cvPhoto')">
+                                </label>
+                            ` : ''}
+                        </div>
+
+                        <!-- Simple 5 CV Fields -->
+                        <form onsubmit="saveCvDetails(event)" class="flex-1 w-full space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-brand-muted mb-1">الاسم الكامل</label>
+                                    ${state.isOwner 
+                                        ? `<input type="text" id="cvFullName" value="${escapeHtml(cv.fullName)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">`
+                                        : `<div class="p-3 rounded-xl bg-brand-bg/60 font-bold text-brand-navy text-sm">${escapeHtml(cv.fullName)}</div>`
+                                    }
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-muted mb-1">المسمى الوظيفي</label>
+                                    ${state.isOwner 
+                                        ? `<input type="text" id="cvJobTitle" value="${escapeHtml(cv.jobTitle)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">`
+                                        : `<div class="p-3 rounded-xl bg-brand-bg/60 font-bold text-brand-ocean text-sm">${escapeHtml(cv.jobTitle)}</div>`
+                                    }
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-muted mb-1">المؤهل العلمي</label>
+                                    ${state.isOwner 
+                                        ? `<input type="text" id="cvQualification" value="${escapeHtml(cv.qualification)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">`
+                                        : `<div class="p-3 rounded-xl bg-brand-bg/60 font-bold text-brand-navy text-sm">${escapeHtml(cv.qualification)}</div>`
+                                    }
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-muted mb-1">سنوات الخبرة</label>
+                                    ${state.isOwner 
+                                        ? `<input type="text" id="cvExperience" value="${escapeHtml(cv.experienceYears)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">`
+                                        : `<div class="p-3 rounded-xl bg-brand-bg/60 font-bold text-brand-navy text-sm">${escapeHtml(cv.experienceYears)}</div>`
+                                    }
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-muted mb-1">تاريخ المباشرة</label>
+                                    ${state.isOwner 
+                                        ? `<input type="text" id="cvStartDate" value="${escapeHtml(cv.startDate)}" required class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">`
+                                        : `<div class="p-3 rounded-xl bg-brand-bg/60 font-bold text-brand-navy text-sm">${escapeHtml(cv.startDate)}</div>`
+                                    }
+                                </div>
+                            </div>
+
+                            ${state.isOwner ? `
+                                <div class="flex justify-end pt-3">
+                                    <button type="submit" class="px-6 py-2.5 rounded-xl btn-gradient text-white text-sm font-bold flex items-center gap-2">
+                                        <i class="fa-solid fa-floppy-disk"></i> حفظ السيرة الذاتية
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        // F. PROFESSIONAL GOAL VIEW (Goals 1 to 5: Title + Status + Direct Evidence Upload)
+        function renderGoalView(sec) {
+            const idx = sec.goalIndex;
+            const goal = state.portfolio.goals[idx] || { title: sec.title, status: 'not_started' };
+            const badge = getGoalStatusBadge(goal.status);
+            const sectionEvidences = state.evidences.filter(e => e.category === sec.id);
+
+            return `
+                <div class="space-y-6">
+                    <!-- Goal Header & Status Card -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-soft border border-gray-100 space-y-5">
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-2xl ${sec.color} flex items-center justify-center font-extrabold text-base">${sec.num}</div>
+                                <div>
+                                    <span class="text-xs font-bold text-brand-turquoise">${sec.title}</span>
+                                    <h1 class="text-lg sm:text-xl font-extrabold text-brand-navy">${escapeHtml(goal.title)}</h1>
+                                </div>
+                            </div>
+                            <span class="px-3.5 py-1.5 rounded-xl text-xs font-bold ${badge.cls}">${badge.label}</span>
+                        </div>
+
+                        ${state.isOwner ? `
+                            <div class="pt-4 border-t border-gray-100 grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+                                <div class="md:col-span-2">
+                                    <label class="block text-xs font-bold text-brand-navy mb-1">اسم / نص الهدف المهني</label>
+                                    <input type="text" id="goalTitle_${idx}" value="${escapeHtml(goal.title)}" class="w-full px-4 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy mb-1">حالة الإنجاز</label>
+                                    <select id="goalStatus_${idx}" class="w-full px-3.5 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-bold text-brand-navy">
+                                        <option value="not_started" ${goal.status === 'not_started' ? 'selected' : ''}>لم يبدأ</option>
+                                        <option value="in_progress" ${goal.status === 'in_progress' ? 'selected' : ''}>قيد التنفيذ</option>
+                                        <option value="completed" ${goal.status === 'completed' ? 'selected' : ''}>مكتمل</option>
+                                    </select>
+                                </div>
+                                <button onclick="saveGoalMeta(${idx})" class="w-full py-2.5 px-4 rounded-xl btn-gradient text-white text-sm font-bold flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-check"></i> حفظ الهدف والحالة
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- Direct Upload Area (Owner Only) -->
+                    ${state.isOwner ? renderUploadZone(sec.id) : ''}
+
+                    <!-- Evidences Gallery -->
+                    ${renderEvidencesGrid(sectionEvidences, sec.title)}
+                </div>
+            `;
+        }
+
+        // G. EVIDENCE SECTIONS VIEW (Sections 11 to 17)
+        function renderEvidenceSectionView(sec) {
+            const isAllLibrary = sec.category === 'evidences_lib';
+            const sectionEvidences = isAllLibrary 
+                ? state.evidences 
+                : state.evidences.filter(e => e.category === sec.category);
+
+            return `
+                <div class="space-y-6">
+                    <!-- Section Header -->
+                    <div class="bg-white rounded-3xl p-6 shadow-card border border-gray-100 flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-2xl ${sec.color} flex items-center justify-center font-extrabold text-lg">
+                                ${sec.num}
+                            </div>
+                            <div>
+                                <h1 class="text-xl font-extrabold text-brand-navy">${sec.title}</h1>
+                                <p class="text-xs text-brand-muted mt-0.5">${sec.desc || 'عرض ورفع الشواهد والملفات مباشرة'}</p>
+                            </div>
+                        </div>
+                        <div class="px-4 py-2 rounded-2xl bg-brand-ice/60 text-brand-ocean font-extrabold text-sm">
+                            عدد الشواهد: ${sectionEvidences.length}
+                        </div>
+                    </div>
+
+                    <!-- Direct Upload Zone (Owner Only) -->
+                    ${state.isOwner ? renderUploadZone(sec.category) : ''}
+
+                    <!-- Evidences Gallery -->
+                    ${renderEvidencesGrid(sectionEvidences, sec.title)}
+                </div>
+            `;
+        }
+
+        // H. SEARCH & FILTER VIEW
+        function renderSearchView() {
+            const q = state.searchQuery.toLowerCase().trim();
+            const filtered = state.evidences.filter(ev => {
+                const matchesQuery = !q || 
+                    (ev.title && ev.title.toLowerCase().includes(q)) ||
+                    (ev.sectionTitle && ev.sectionTitle.toLowerCase().includes(q)) ||
+                    (ev.fileTypeLabel && ev.fileTypeLabel.toLowerCase().includes(q)) ||
+                    (ev.dateFormatted && ev.dateFormatted.toLowerCase().includes(q));
+                const matchesType = state.filterType === 'all' || ev.fileType === state.filterType;
+                const matchesCat = state.filterCategory === 'all' || ev.category === state.filterCategory;
+                return matchesQuery && matchesType && matchesCat;
+            });
+
+            const typeButtons = [
+                { id: 'all', label: 'الكل', icon: 'fa-layer-group' },
+                { id: 'image', label: 'الصور', icon: 'fa-image' },
+                { id: 'pdf', label: 'ملفات PDF', icon: 'fa-file-pdf' },
+                { id: 'video', label: 'الفيديوهات', icon: 'fa-video' },
+                { id: 'doc', label: 'المستندات', icon: 'fa-file-word' }
+            ];
+
+            return `
+                <div class="space-y-6">
+                    <div class="bg-white rounded-3xl p-6 shadow-soft border border-gray-100 space-y-4">
+                        <h1 class="text-xl font-extrabold text-brand-navy flex items-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass text-brand-ocean"></i> البحث وتنظيم الشواهد
+                        </h1>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div class="md:col-span-2 relative">
+                                <input type="text" value="${escapeHtml(state.searchQuery)}" oninput="updateSearchState('searchQuery', this.value)" placeholder="ابحث باسم الشاهد، اسم القسم، نوع الملف، أو تاريخ الإضافة..." class="w-full pr-10 pl-4 py-3 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm">
+                                <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3.5 text-brand-muted"></i>
+                            </div>
+                            <select onchange="updateSearchState('filterCategory', this.value)" class="px-4 py-3 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-sm font-semibold text-brand-navy">
+                                <option value="all" ${state.filterCategory === 'all' ? 'selected' : ''}>جميع الأقسام</option>
+                                ${SECTIONS_INDEX.filter(s => s.type === 'goal' || s.type === 'evidence').map(s => `
+                                    <option value="${s.category || s.id}" ${state.filterCategory === (s.category || s.id) ? 'selected' : ''}>${s.num}. ${s.title}</option>
+                                `).join('')}
+                            </select>
+                        </div>
+
+                        <!-- File Type Pills -->
+                        <div class="flex flex-wrap items-center gap-2 pt-1">
+                            ${typeButtons.map(tb => `
+                                <button onclick="updateSearchState('filterType', '${tb.id}')" class="px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition ${
+                                    state.filterType === tb.id 
+                                    ? 'btn-gradient text-white shadow-xs' 
+                                    : 'bg-brand-bg text-brand-navy hover:bg-brand-ice'
+                                }">
+                                    <i class="fa-solid ${tb.icon}"></i>
+                                    <span>${tb.label}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    ${renderEvidencesGrid(filtered, 'نتائج البحث والتصفية')}
+                </div>
+            `;
+        }
+
+        // =========================================================================
+        // 9. REUSABLE UI COMPONENTS (UPLOAD ZONE & EVIDENCE CARDS)
+        // =========================================================================
+        function renderUploadZone(categoryId) {
+            return `
+                <div class="bg-white rounded-3xl p-6 shadow-card border-2 border-dashed border-brand-turquoise/60 drop-zone transition-all"
+                     ondragover="event.preventDefault(); this.classList.add('dragover')"
+                     ondragleave="this.classList.remove('dragover')"
+                     ondrop="event.preventDefault(); this.classList.remove('dragover'); handleEvidenceFilesUpload(event.dataTransfer.files, '${categoryId}')">
+                    
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 text-center sm:text-right">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-ice text-brand-ocean flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-brand-navy text-base">رفع الشواهد والملفات مباشرة</h3>
+                                <p class="text-xs text-brand-muted mt-0.5">اسحبي الملفات وأفلتيها هنا، أو اضغطي على زر الإضافة (يدعم رفع ملفات متعددة: PDF, صور, فيديو, Word, Excel, PowerPoint)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full lg:w-auto">
+                            <input type="text" id="optionalEvidenceTitle" placeholder="عنوان الشاهد (اختياري)..." class="px-3.5 py-2.5 rounded-xl bg-brand-bg border border-gray-200 focus:bg-white focus:border-brand-medium outline-none text-xs font-medium">
+                            <label class="cursor-pointer px-5 py-2.5 rounded-xl btn-gradient text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shrink-0 shadow-xs">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>إضافة شاهد جديد</span>
+                                <input type="file" multiple class="hidden" onchange="handleEvidenceFilesUpload(this.files, '${categoryId}'); this.value=''">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Real Upload Progress Bar -->
+                    <div id="uploadProgressWrapper" class="hidden mt-4 pt-3 border-t border-gray-100">
+                        <div class="flex justify-between text-xs font-bold text-brand-ocean mb-1.5">
+                            <span id="uploadProgressText">جاري الرفع...</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-brand-bg rounded-full overflow-hidden">
+                            <div id="uploadProgressBar" class="h-full btn-gradient rounded-full transition-all duration-200" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderEvidencesGrid(evidencesList, sectionTitle) {
+            if (!evidencesList.length) {
+                return `
+                    <div class="bg-white rounded-3xl p-12 text-center border border-gray-100 shadow-card">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-bg text-brand-muted flex items-center justify-center text-2xl mx-auto mb-3">
+                            <i class="fa-regular fa-folder-open"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-navy text-base">لا توجد شواهد مرفوعة في هذا القسم حالياً</h3>
+                        <p class="text-xs text-brand-muted mt-1">${state.isOwner ? 'استخدمي زر "إضافة شاهد جديد" أعلاه لرفع الصور أو ملفات PDF أو الفيديوهات فوراً.' : 'ستظهر الشواهد هنا فور إضافتها من قِبل صاحبة الملف.'}</p>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    ${evidencesList.map(ev => renderEvidenceCard(ev, false)).join('')}
+                </div>
+            `;
+        }
+
+        function renderEvidenceCard(ev, showSectionBadge = false) {
+            const meta = classifyFileType(ev.fileName || '', ev.mimeType || '');
+            let thumbnailHtml = '';
+
+            if (ev.fileType === 'image') {
+                thumbnailHtml = `
+                    <div onclick="openPreviewModal('${ev.id}')" class="cursor-pointer h-44 bg-brand-bg overflow-hidden relative group">
+                        <img src="${ev.url}" alt="${escapeHtml(ev.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/25 transition flex items-center justify-center">
+                            <span class="opacity-0 group-hover:opacity-100 px-3 py-1.5 rounded-xl bg-white/95 text-brand-navy text-xs font-bold shadow-sm transition">
+                                <i class="fa-solid fa-expand ml-1"></i> معاينة الصورة
+                            </span>
+                        </div>
+                    </div>
+                `;
+            } else if (ev.fileType === 'video') {
+                thumbnailHtml = `
+                    <div onclick="openPreviewModal('${ev.id}')" class="cursor-pointer h-44 bg-brand-navy/90 flex flex-col items-center justify-center text-white relative group">
+                        <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <span class="text-xs font-semibold mt-2 text-brand-ice">اضغط لتشغيل الفيديو</span>
+                    </div>
+                `;
+            } else {
+                thumbnailHtml = `
+                    <div onclick="openPreviewModal('${ev.id}')" class="cursor-pointer h-44 bg-gradient-to-br from-brand-bg to-brand-ice/40 flex flex-col items-center justify-center p-4 group">
+                        <div class="w-14 h-14 rounded-2xl bg-white shadow-xs ${meta.badgeColor} flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid ${meta.icon}"></i>
+                        </div>
+                        <span class="text-xs font-bold text-brand-ocean mt-2.5">${meta.label}</span>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-hover transition-all overflow-hidden flex flex-col">
+                    ${thumbnailHtml}
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg ${meta.badgeColor}">${meta.label}</span>
+                                <span class="text-[11px] text-brand-muted">${escapeHtml(ev.dateFormatted || '')}</span>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-sm line-clamp-2" title="${escapeHtml(ev.title)}">${escapeHtml(ev.title)}</h3>
+                            ${showSectionBadge && ev.sectionTitle ? `
+                                <span class="inline-block mt-1.5 text-[11px] font-semibold text-brand-ocean bg-brand-ice/50 px-2 py-0.5 rounded-md">
+                                    <i class="fa-solid fa-folder text-[10px] ml-1"></i>${escapeHtml(ev.sectionTitle)}
+                                </span>
+                            ` : ''}
+                        </div>
+
+                        <div class="pt-2.5 border-t border-gray-100 flex items-center justify-between gap-1.5">
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="openPreviewModal('${ev.id}')" class="px-3 py-1.5 rounded-xl bg-brand-ice/70 hover:bg-brand-ocean text-brand-ocean hover:text-white text-xs font-bold transition flex items-center gap-1">
+                                    <i class="fa-solid fa-eye"></i> معاينة
+                                </button>
+                                <a href="${ev.url}" target="_blank" download="${escapeHtml(ev.fileName || ev.title)}" class="px-3 py-1.5 rounded-xl bg-brand-bg hover:bg-brand-ice text-brand-navy text-xs font-bold transition flex items-center gap-1">
+                                    <i class="fa-solid fa-download"></i> تنزيل
+                                </a>
+                            </div>
+
+                            ${state.isOwner ? `
+                                <div class="flex items-center gap-1">
+                                    <button onclick="triggerReplaceEvidence('${ev.id}')" title="استبدال الملف" class="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 hover:bg-amber-500 hover:text-white flex items-center justify-center text-xs transition">
+                                        <i class="fa-solid fa-arrows-rotate"></i>
+                                    </button>
+                                    <button onclick="confirmDeleteEvidence('${ev.id}')" title="حذف الشاهد" class="w-8 h-8 rounded-xl bg-red-50 text-red-600 hover:bg-red-600 hover:text-white flex items-center justify-center text-xs transition">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // =========================================================================
+        // 10. MODALS, QR GENERATOR, SEARCH & PRINT REPORT
+        // =========================================================================
+        window.openPreviewModal = function(evidenceId) {
+            const ev = state.evidences.find(item => item.id === evidenceId);
+            if (!ev) return;
+
+            const modal = document.getElementById('previewModal');
+            const body = document.getElementById('previewBody');
+            const title = document.getElementById('previewTitle');
+            const meta = document.getElementById('previewMeta');
+            const dlBtn = document.getElementById('previewDownloadBtn');
+
+            title.textContent = ev.title;
+            meta.textContent = `${ev.sectionTitle || ''} • ${ev.dateFormatted || ''}`;
+            dlBtn.href = ev.url;
+            dlBtn.setAttribute('download', ev.fileName || ev.title);
+
+            if (ev.fileType === 'image') {
+                body.innerHTML = `<img src="${ev.url}" alt="${escapeHtml(ev.title)}" class="max-h-[72vh] max-w-full rounded-2xl shadow-md object-contain">`;
+            } else if (ev.fileType === 'pdf') {
+                body.innerHTML = `<iframe src="${ev.url}" class="w-full h-[72vh] rounded-2xl border border-gray-200 bg-white"></iframe>`;
+            } else if (ev.fileType === 'video') {
+                body.innerHTML = `
+                    <video controls autoplay class="max-h-[72vh] max-w-full rounded-2xl shadow-md bg-black">
+                        <source src="${ev.url}" type="${ev.mimeType || 'video/mp4'}">
+                        متصفحك لا يدعم تشغيل الفيديو مباشرة.
+                    </video>
+                `;
+            } else {
+                const officeViewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(ev.url)}`;
+                body.innerHTML = `
+                    <div class="w-full flex flex-col items-center gap-4">
+                        <iframe src="${officeViewerUrl}" class="w-full h-[65vh] rounded-2xl border border-gray-200 bg-white"></iframe>
+                        <p class="text-xs text-brand-muted">في حال تعذر عرض المستند مباشرة، يمكنك تنزيله على جهازك عبر زر "تنزيل الملف" أعلاه.</p>
+                    </div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closePreviewModal = function() {
+            const modal = document.getElementById('previewModal');
+            document.getElementById('previewBody').innerHTML = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.openAuthModal = function() {
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeAuthModal = function() {
+            const modal = document.getElementById('authModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        function openConfirmModal(title, message, onConfirm) {
+            const modal = document.getElementById('confirmModal');
+            document.getElementById('confirmTitle').textContent = title;
+            document.getElementById('confirmMessage').textContent = message;
+            
+            const okBtn = document.getElementById('confirmOkBtn');
+            const cancelBtn = document.getElementById('confirmCancelBtn');
+
+            const cleanup = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            };
+
+            cancelBtn.onclick = cleanup;
+            okBtn.onclick = async () => {
+                cleanup();
+                await onConfirm();
+            };
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function generateQRCode(elementId, size = 100) {
+            const el = document.getElementById(elementId);
+            if (!el || typeof QRCode === 'undefined') return;
+            el.innerHTML = '';
+            const currentUrl = window.location.href.split('#')[0];
+            new QRCode(el, {
+                text: currentUrl,
+                width: size,
+                height: size,
+                colorDark: "#173B56",
+                colorLight: "#FFFFFF",
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        window.handleGlobalSearch = function(e) {
+            state.searchQuery = e.target.value;
+            if (state.currentView !== 'search') {
+                navigateTo('search');
+            } else {
+                renderCurrentView();
+            }
+        };
+
+        window.updateSearchState = function(key, val) {
+            state[key] = val;
+            renderCurrentView();
+        };
+
+        window.filterAndGoSearch = function(fileType) {
+            state.filterType = fileType;
+            state.filterCategory = 'all';
+            navigateTo('search');
+        };
+
+        window.execFormat = function(cmd, value = null) {
+            document.execCommand(cmd, false, value);
+        };
+
+        window.prepareAndPrint = function() {
+            const p = state.portfolio;
+            const stats = computeStats();
+            const printBox = document.getElementById('printReportContainer');
+
+            printBox.innerHTML = `
+                <div class="space-y-8 font-sans">
+                    <!-- Cover Summary -->
+                    <div class="border-2 border-brand-ocean rounded-3xl p-8 text-center">
+                        <div class="flex justify-between items-center mb-6">
+                            <img src="${p.moeLogoUrl || DEFAULT_MOE_LOGO}" class="h-20 object-contain">
+                            <div>
+                                <h1 class="text-2xl font-extrabold text-brand-navy">ملف إنجاز والأداء الوظيفي للمساعد الإداري</h1>
+                                <p class="text-base font-bold text-brand-ocean mt-1">العام الدراسي ${escapeHtml(p.academicYear)}</p>
+                            </div>
+                            <img src="${p.schoolLogoUrl || DEFAULT_SCHOOL_LOGO}" class="h-20 object-contain">
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-sm bg-brand-bg p-4 rounded-2xl">
+                            <div><strong>المدرسة:</strong> ${escapeHtml(p.schoolName)}</div>
+                            <div><strong>المساعد الإداري:</strong> ${escapeHtml(p.assistantName)}</div>
+                            <div><strong>مديرة المدرسة:</strong> ${escapeHtml(p.principalName)}</div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Summary -->
+                    <div>
+                        <h2 class="text-lg font-extrabold text-brand-navy border-b-2 border-brand-ice pb-2 mb-4">ملخص الإحصائيات ونسبة الإنجاز</h2>
+                        <div class="grid grid-cols-3 gap-3 text-center text-sm">
+                            <div class="p-3 border rounded-xl">إجمالي الشواهد: <strong>${stats.total}</strong></div>
+                            <div class="p-3 border rounded-xl">نسبة إنجاز الأهداف: <strong>${stats.goalsPercentage}%</strong></div>
+                            <div class="p-3 border rounded-xl">المبادرات: <strong>${stats.initiativesCount}</strong></div>
+                            <div class="p-3 border rounded-xl">الدورات التدريبية: <strong>${stats.coursesCount}</strong></div>
+                            <div class="p-3 border rounded-xl">الأعمال التطوعية: <strong>${stats.volunteeringCount}</strong></div>
+                            <div class="p-3 border rounded-xl">شهادات الشكر: <strong>${stats.certificatesCount}</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Texts -->
+                    <div class="space-y-4">
+                        <h2 class="text-lg font-extrabold text-brand-navy border-b-2 border-brand-ice pb-2">المقدمة</h2>
+                        <div class="text-sm leading-relaxed">${p.introText}</div>
+                        
+                        <h2 class="text-lg font-extrabold text-brand-navy border-b-2 border-brand-ice pb-2 pt-4">الأهداف المهنية الخمسة</h2>
+                        <ul class="list-disc pr-5 text-sm space-y-1.5">
+                            ${p.goals.map((g, i) => `<li><strong>الهدف ${i+1}:</strong> ${escapeHtml(g.title)} — (${getGoalStatusBadge(g.status).label})</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <!-- Evidences Table -->
+                    <div class="page-break">
+                        <h2 class="text-lg font-extrabold text-brand-navy border-b-2 border-brand-ice pb-2 mb-4">فهرس الشواهد المرفوعة (${state.evidences.length})</h2>
+                        <table class="w-full text-right text-xs border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-brand-ice">
+                                    <th class="border border-gray-300 p-2">#</th>
+                                    <th class="border border-gray-300 p-2">عنوان الشاهد</th>
+                                    <th class="border border-gray-300 p-2">القسم</th>
+                                    <th class="border border-gray-300 p-2">نوع الملف</th>
+                                    <th class="border border-gray-300 p-2">تاريخ الإضافة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${state.evidences.map((ev, idx) => `
+                                    <tr>
+                                        <td class="border border-gray-300 p-2">${idx + 1}</td>
+                                        <td class="border border-gray-300 p-2 font-bold">${escapeHtml(ev.title)}</td>
+                                        <td class="border border-gray-300 p-2">${escapeHtml(ev.sectionTitle || '')}</td>
+                                        <td class="border border-gray-300 p-2">${escapeHtml(ev.fileTypeLabel || '')}</td>
+                                        <td class="border border-gray-300 p-2">${escapeHtml(ev.dateFormatted || '')}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+
+            window.print();
+        };
+
+        // =========================================================================
+        // 11. HELPERS
+        // =========================================================================
+        function getGoalStatusBadge(status) {
+            if (status === 'completed') return { label: 'مكتمل', cls: 'bg-brand-mint text-emerald-700' };
+            if (status === 'in_progress') return { label: 'قيد التنفيذ', cls: 'bg-amber-50 text-amber-700' };
+            return { label: 'لم يبدأ', cls: 'bg-gray-100 text-brand-muted' };
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const colors = {
+                success: 'bg-emerald-600 text-white',
+                error: 'bg-red-600 text-white',
+                warning: 'bg-amber-500 text-white',
+                info: 'bg-brand-navy text-white'
+            };
+            const icons = {
+                success: 'fa-circle-check',
+                error: 'fa-circle-exclamation',
+                warning: 'fa-triangle-exclamation',
+                info: 'fa-circle-info'
+            };
+
+            const toast = document.createElement('div');
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-2xl shadow-lg text-xs sm:text-sm font-bold transform transition-all duration-300 ${colors[type] || colors.info}`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.info} text-base"></i><span>${escapeHtml(message)}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // Start Application on Load
+        window.addEventListener('load', initApp);
+    </script>
+</body>
+</html>
